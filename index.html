@@ -1,0 +1,80 @@
+<!--Welcome to My Portfolio webpage!!-->
+<!--The head section of the html page.-->
+<!doctype html>
+<html lang="en">
+	<head>
+		<!--The title of the html page.-->
+		<title>My Portfolio</title>
+		<!--The meta content of the html page.-->
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--The link element linking the html page to a default css file.-->
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+		<!--The link element linking the html page to a responsive css file based on browser size.-->
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 401px) and (max-width: 800px)"
+			href="css/responsivetablet.css">
+		<!--The link element linking the html page to a responsive css file based on browser size.-->
+		<link rel="stylesheet" type="text/css" media="screen and (max-width:400px)"
+			href="css/responsivephone.css">
+	</head>
+	<!--The body of the html page.-->
+	<body>
+		<!--The body of the html page is designed using flex-box.-->
+		<div class="flex-container">
+			<!--The header section in the body of the html page that contains logo and heading.-->
+			<header class="header">
+				<!--The logo section in the header section.-->
+				<div class="logo">
+					<img src="img/logo.png" alt="logo">
+				</div>
+				<!--The heading section in the header section.-->
+				<div class="heading">
+					<h1>YAMINI CHANDRAMOULI</h1>
+					<h2>Full stack Developer</h2>
+				</div>
+			</header>
+			<!--The horizontal line separating the header section from the streched image.-->
+			<div id="underline">
+				<hr>
+			</div>
+			<!--The section of the streched image.-->
+			<div id="writing">
+				<img id="imgwriting" src="img/writing.jpg" alt="writing">
+			</div>
+			<!--The section of the work done with links.-->
+			<div>
+				<h2 id ="subheading">Featured Work</h2>
+			</div>
+			<!--The images of the featured work section.-->
+			<div class = "subimages">
+				<!--The first image of the featured work section along with a caption.-->
+				<figure class="firstimage">
+					<img src="img/pen.jpeg" alt="Technical Experience">
+					<figcaption>Technical Experience
+						<br>
+						<a href="https://www.linkedin.com/in/yaminichandramouli/" target="_blank">linkedin profile</a>
+					</figcaption>
+				</figure>
+				<!--The second image of the featured work section along with a caption.-->
+				<figure class="secondimage">
+					<img src="img/code.jpg" alt="Datascience course">
+					<figcaption>Datascience course
+						<br>
+						<a href="https://www.coursera.org/api/legacyCertificates.v1/spark/statementOfAccomplishment/972772~3455080/pdf" target="_blank">Coursera SOA</a>
+					</figcaption>
+				</figure>
+				<!--The third image of the featured work section along with a caption.-->
+				<figure class="thirdimage">
+					<img src="img/code2.jpeg" alt="SQL Training">
+					<figcaption>SQL and SSRS training
+						<br>
+						<a href="https://www.blogger.com/blogger.g?rinli=1&pli=1&blogID=7491982409627031439#allposts" target="_blank">Sql training blog</a>
+					</figcaption>
+				</figure>
+			</div>
+			<footer class="notes">
+				<p>Images sourced from internet.</p>
+			</footer>
+		</div>
+	</body>
+</html>

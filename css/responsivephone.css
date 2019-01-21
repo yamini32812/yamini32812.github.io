@@ -1,0 +1,140 @@
+/*
+The responsive css file for screens less than or equal to 400px wide.
+*/
+
+
+/*
+The entire body is encompassed in an outer flex box container in a vertical direction.
+*/
+
+.flex-container {
+	display: flex;
+	flex-direction: column;
+}
+
+
+/*
+The header section is encompassed in an inner flex box container in a vertical
+direction.
+*/
+
+.header {
+	display: flex;
+	flex-direction: column;
+}
+
+
+/*
+The heading has to be visible for small screens.
+The line-height element gives the space between two headings.
+*/
+
+.heading {
+	font-size: 13px;
+	line-height: 15px;
+}
+
+
+/*
+The logo has to be visible for small screens.
+*/
+
+.logo img {
+	width: 50px;
+	height: 50px;
+}
+
+
+/*
+The horizontal line which will fit the whole width of the screen.
+*/
+
+#underline {
+	align-items: stretch;
+}
+
+
+/*
+The div that will contain the streched image that is on the middle of the screen.
+*/
+
+#writing {
+	max-width: 100%;
+	height: auto;
+}
+
+
+/*
+The streched image that is on the middle of the screen.
+*/
+
+#imgwriting {
+	max-width: 100%;
+	height: auto;
+}
+
+
+/*
+The SubHeading in a specific format.
+*/
+
+#subheading {
+	font-family: "arial", sans-serif;
+	font-size: 25px;
+	letter-spacing: 3px;
+	color: #7d97ad;
+}
+
+
+/*
+The SubImages section in another inner flexbox in a vertical direction.
+*/
+
+.subimages {
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
+	justify-content: flex-start;
+}
+
+
+/*
+Fixed width for the SubImages.
+*/
+
+.subimages img {
+	width: 250px;
+	height: 150px;
+}
+
+
+/*
+Hyperlinks with min. size required for smart-phone handling.
+*/
+
+nav a {
+	min-width: 48px;
+	min-height: 48px;
+}
+
+
+/*
+The caption of the images in a specific format.
+*/
+
+figcaption {
+	font-family: "arial", sans-serif;
+	font-size: 25px;
+	text-align: left;
+}
+
+
+/*
+The footer note.
+*/
+
+.notes {
+	font-family: "arial", sans-serif;
+	font-size: 15px;
+	text-align: left;
+}

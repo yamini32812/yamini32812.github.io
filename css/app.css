@@ -31,7 +31,7 @@ The line-height element gives the space between two headings.
 
 .heading {
 	line-height: 15px;
-	font-family: sans-serif;
+	font-family: verdana,sans-serif;
 }
 
 
@@ -43,6 +43,16 @@ The horizontal line which will fit the whole width of the screen.
 	align-items: stretch;
 }
 
+/* */
+#content{
+	display:flex;
+	flex-direction: row;
+}
+
+/* */
+#sidebar{
+	min-width: 20%;
+}
 
 /*
 The div that will contain the streched image that is on the middle of the screen.

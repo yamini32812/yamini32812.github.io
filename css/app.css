@@ -12,6 +12,9 @@ The entire body is encompassed in an outer flex box container in a vertical dire
 	flex-direction: column;
 }
 
+.logo{
+	margin-left: 100px;
+}
 
 /*
 The header section is encompassed in an inner flex box container in a horizontal
@@ -21,7 +24,6 @@ direction with equal space between.
 .header {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 }
 
 
@@ -30,50 +32,50 @@ The line-height element gives the space between two headings.
 */
 
 .heading {
-	line-height: 15px;
+	line-height: 2px;
 	font-family: verdana,sans-serif;
 }
 
-
-/*
-The horizontal line which will fit the whole width of the screen.
-*/
-
-#underline {
-	align-items: stretch;
+#firstname {
+	color: #a9a9a9;
 }
 
+#jobtitle {
+	float:right;
+}
+
+ #menu{
+  position: absolute;
+	margin-top:50px;
+	right: 10px;
+}
 /* */
-#content{
-	display:flex;
-	flex-direction: row;
-}
+#menu .button {
+            background-color: #0080FF;
+            border: 1px solid aliceblue;
+            width: 120px;
+            color: white;
+            font-size: 14px;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+						cursor: pointer;
+						align-items: flex-end;
+         }
 
-/* */
-#sidebar{
-	min-width: 20%;
-}
+				 #menu button:hover {
+				   background-color: #3e8e41;
+				 }
 
-/*
-The div that will contain the streched image that is on the middle of the screen.
-*/
+				 /*
+				 The horizontal line which will fit the whole width of the screen.
+				 */
 
-#writing {
-	width: 100%;
-	height: 100%;
-}
-
-
-/*
-The streched image that is on the middle of the screen.
-*/
-
-#imgwriting {
-	width: 100%;
-	height: 100%;
-}
-
-
+				 hr{
+				 	align-items: stretch;
+				 	background-color: #0080FF;
+					height: 3px;
+				 }
 /*
 The SubHeading in a specific format.
 */
@@ -81,30 +83,29 @@ The SubHeading in a specific format.
 #subheading {
 	font-family: "arial", sans-serif;
 	letter-spacing: 3px;
-	color: #7d97ad;
+	color: #a9a9a9;
+	text-align: center;
 }
 
-
-/*
-The SubImages section in another inner flexbox in a horizontal direction.
-*/
-
-.subimages {
-	display: flex;
+.carousalContainer{
+	display:flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
+	align-items: center;
 }
-
 
 /*
 Fixed width for the SubImages.
 */
 
-.subimages img {
+.carousalImage {
 	width: 250px;
 	height: 150px;
 }
-
+#prev,#next{
+	cursor: pointer;
+	margin: 10px;
+}
 
 /*
 Hyperlinks with min. size required for smart-phone handling.
@@ -114,18 +115,6 @@ nav a {
 	min-width: 48px;
 	min-height: 48px;
 }
-
-
-/*
-The caption of the images in a specific format.
-*/
-
-figcaption {
-	font-weight: bold;
-	font-size: 20px;
-	text-align: center;
-}
-
 
 /*
 The footer note.

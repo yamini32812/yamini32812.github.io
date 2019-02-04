@@ -29,68 +29,49 @@
 				</div>
 				<!--The heading section in the header section.-->
 				<div class="heading">
-					<h1>YAMINI CHANDRAMOULI</h1>
-					<h2>Full stack Developer</h2>
+					<h1>
+						<span id="firstname">Yamini</span>
+						<span id="lastname">Chandramouli</span>
+					</h1>
+					<h2 id="jobtitle">Front-End Web Developer</h2>
 				</div>
+
+				<div id="menu">
+					 <button class = "button">Home</button>
+					 <!-- <button class = "button">linkedin profile</button>
+					 <button class = "button">Udacity Profile</button> -->
+					 <button class = "button">Resume</button>
+				</div>
+
 			</header>
+
+
 			<!--The horizontal line separating the header section from the streched image.-->
 			<div id="underline">
 				<hr>
 			</div>
-			<div id="content">
-			<div id="sidebar">
-				<table>
-					<tr>
-						<td>Home</td>
-					</tr>
-					<tr>
-						<td>linkedin profile</td>
-					</tr>
-					<tr>
-						<td>Udacity Profile</td>
-					</tr>
-					<tr>
-						<td>Resume</td>
-					</tr>
-				</table>
-			</div>
+
+
 			<!--The section of the work done with links.-->
 			<div id="main">
+
 			<div>
 				<h2 id ="subheading">Featured Work</h2>
 			</div>
 			<!--The images of the featured work section.-->
-			<div class = "subimages">
-				<!--The first image of the featured work section along with a caption.-->
-				<figure class="firstimage">
-					<img src="img/pen.jpeg" alt="Technical Experience">
-					<figcaption>Technical Experience
-						<br>
-						<a href="https://www.linkedin.com/in/yaminichandramouli/" target="_blank">linkedin profile</a>
-					</figcaption>
-				</figure>
-				<!--The second image of the featured work section along with a caption.-->
-				<figure class="secondimage">
-					<img src="img/code.jpg" alt="Datascience course">
-					<figcaption>Datascience course
-						<br>
-						<a href="https://www.coursera.org/api/legacyCertificates.v1/spark/statementOfAccomplishment/972772~3455080/pdf" target="_blank">Coursera SOA</a>
-					</figcaption>
-				</figure>
-				<!--The third image of the featured work section along with a caption.-->
-				<figure class="thirdimage">
-					<img src="img/code2.jpeg" alt="SQL Training">
-					<figcaption>SQL and SSRS training
-						<br>
-						<a href="https://www.blogger.com/blogger.g?rinli=1&pli=1&blogID=7491982409627031439#allposts" target="_blank">Sql training blog</a>
-					</figcaption>
-				</figure>
+			<div class = "carousalContainer">
+
+				<button id="prev" onclick="prevSlide()">PREV</button>
+				<img class="carousalImage" src="img/pen.jpeg" alt="Project 1">
+				<button id="next" onclick="nextSlide()">NEXT</button>
+
 			</div>
 		</div>
-	</div>
+
 			<footer class="notes">
-				<p>Images sourced from internet.</p>
+				<p>@Images sourced from internet.</p>
 			</footer>
 		</div>
+		<script src="js/app.js"></script>
 	</body>
 </html>

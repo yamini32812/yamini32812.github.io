@@ -1,0 +1,37 @@
+<head>
+  <title>SumtoKthnumofarr</title>
+</head>
+<p><span>Enter array of nums:</span>
+<input id="userstr" text></input><br><br>
+<span>Enter k:</span>
+<input id="k" text></input><br><br>
+
+<button onclick=sumtokthnuminarr()>Find the maximum possible sum of
+  some of its k consecutive numbers.</button><br>
+<p>Find the maximum possible sum of
+  some of its k consecutive numbers.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function sumtokthnuminarr(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  let numarr = strarr.map(Number);
+  const k = document.getElementById("k").value;
+  let sum=0;
+
+  if(k<=numarr.length)
+  {
+    for(let i=0;i<k;i++)
+    {
+      sum += numarr[i];
+    }
+  }
+  else
+    document.getElementById("result").innerHTML = 'Out of range';
+
+  document.getElementById("result").innerHTML = sum;
+}
+</script>

@@ -1,0 +1,24 @@
+<head>
+  <title>MaxElementofarr</title>
+</head>
+<p><span>Enter array of nums:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick=largestnuminarr()>Find the larger value between the first or last
+  and set all the other elements with that value</button><br>
+<p>Find the larger value between the first or last and set all the other elements with that value.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function largestnuminarr(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  let numarr = strarr.map(Number);
+  let maxval = 0;
+  maxval = Math.max(numarr[0],numarr[numarr.length - 1]);
+  numarr = numarr.map((element)=>maxval);
+  document.getElementById("result").innerHTML = numarr;
+}
+</script>

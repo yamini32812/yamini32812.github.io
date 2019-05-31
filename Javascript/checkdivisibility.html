@@ -1,0 +1,25 @@
+<head>
+  <title>Checkdivisibility</title>
+</head>
+<p><span>Enter num:</span>
+<input id="usernum" text></input><br><br>
+<button onclick= "checkdivisibility()" type="submit" value="submit">Divide by 7 or 11</button><br>
+<p>Check if a given positive number is a multiple of 7 or a multiple of 11.</p>
+<span id="result"/>
+</p>
+
+<script>
+
+window.onload = function() {
+  document.getElementById("usernum").focus();
+};
+
+function checkdivisibility(){
+  const num = parseInt(document.getElementById("usernum").value);
+
+  if(num>0 && (num % 7 == 0 || num % 11 == 0))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

@@ -1,0 +1,25 @@
+<head>
+  <title>Strwithfirstlastchar</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<span>Enter Number:</span>
+<input id="usernum" text></input><br><br>
+<button onclick="strwithfirstlastchar()">Create a new string using the first
+  and last n characters from a given string
+</button><br>
+<p>Create a new string using the first and last n characters from a given string.
+   The string length must be greater or equal to n.</p>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function strwithfirstlastchar(){
+  const str = document.getElementById("userstr").value;
+  const numofchar = document.getElementById("usernum").value;
+  if(str.length >= numofchar)
+    document.getElementById("result").innerHTML = str.slice(0,numofchar) + str.slice(-numofchar);
+}
+</script>

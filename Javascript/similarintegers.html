@@ -1,0 +1,30 @@
+<head>
+  <title>Similarint</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<span>Enter divisor:</span>
+<input id="divisor" text></input><br><br>
+<button onclick=similarint()>Check whether two given integers are similar or not.</button><br>
+<p>Check whether two given integers are similar or not.<br>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function similarint(){
+  const numone = parseInt(document.getElementById("firstnum").value);
+  const numtwo = parseInt(document.getElementById("secondnum").value);
+  const divisor = document.getElementById("divisor").value;
+
+  if((numone % divisor === 0 && numtwo % divisor === 0)
+  || (numone % divisor != 0 && numtwo % divisor != 0))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+
+</script>

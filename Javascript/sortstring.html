@@ -1,0 +1,19 @@
+<head>
+  <title>Sortstring</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<button onclick='sortstring()'>Convert the letters of a given string in alphabetical order</button><br>
+<p>Convert the letters of a given string in alphabetical order.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function sortstring(){
+  const strarr = document.getElementById("userstr").value.split('');
+  strarr.sort();
+  document.getElementById('result').innerHTML = strarr.join('');
+}
+</script>

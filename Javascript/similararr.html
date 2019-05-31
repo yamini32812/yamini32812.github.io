@@ -1,0 +1,36 @@
+<head>
+  <title>Similararray</title>
+</head>
+<p><span>Enter first array:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second array:</span>
+<input id="secondnum" text></input><br><br>
+<button onclick=similararr()>Check whether two arrays of
+  integers of same length are similar or not.</button><br>
+<p>Check whether two arrays of integers of same length are similar or not.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function similararr(){
+  const strarrone = (document.getElementById("firstnum").value).split(',');
+  const strarrtwo = (document.getElementById("secondnum").value).split(',');
+  let numarrone = strarrone.map(Number);
+  let numarrtwo = strarrtwo.map(Number);
+  let result = '';
+
+  if(numarrone.length != numarrtwo.length)
+    result = false;
+  else{
+  for(let i=0;i<numarrone.length;i++){
+    if(numarrone[i] != numarrtwo[i])
+       result = false;
+    else
+       result = true;
+     }
+   }
+   document.getElementById("result").innerHTML = result;
+}
+</script>

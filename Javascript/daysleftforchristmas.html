@@ -1,0 +1,24 @@
+<head>
+  <title>Daysleftforxmas</title>
+</head>
+<p>
+<button onclick="daysleftforxmas()" id="daysleft">Days Left for Christmas</button><br><br>
+<span id="result"/>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("daysleft").focus();
+};
+
+function daysleftforxmas(){
+  let today = new Date();
+  let cmas = new Date(today.getFullYear(),11,25);
+  if(today.getMonth() == 11 && today.getDate() > 25)
+    cmas.setFullYear(cmas.getFullYear() + 1);
+
+  const oneDay = 1000 * 60 * 60 * 24;
+  let daysleft = Math.ceil((cmas.getTime() - today.getTime())/oneDay);
+  document.getElementById("result").innerHTML = daysleft;
+}
+</script>

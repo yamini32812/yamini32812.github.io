@@ -1,0 +1,30 @@
+<!--<p>Check if two numbers are in range 40..60 or in the range 70..100 inclusive.</p><br>-->
+<head>
+  <title>Inrange</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+
+<button onclick=inrange()>In range</button>
+<p>Check if two numbers are in range 40..60 or in the range 70..100 inclusive:</p>
+<span id="result"></span>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+
+function inrange(){
+  const numberone = parseInt(document.getElementById("firstnum").value);
+  const numbertwo = parseInt(document.getElementById("secondnum").value);
+
+  if((numberone >= 40 && numberone <= 60) && (numbertwo >= 40 && numbertwo <= 60)
+  || (numberone >= 70 && numberone <= 100) && (numbertwo >= 70 && numbertwo <= 100))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

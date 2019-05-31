@@ -1,0 +1,24 @@
+<head>
+  <title>Equalpeesandtees</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<button onclick="equalpandt()">Check for equal number of p's
+  and t's in a given string.</button><br>
+<p>Check if a given string contains equal number of p's and t's present.</p>
+<span id="result"></span>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function equalpandt(){
+  const str = document.getElementById("userstr").value;
+  if((str.match(/[p]/gi).length) == (str.match(/[t]/gi).length))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

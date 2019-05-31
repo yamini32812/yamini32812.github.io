@@ -1,0 +1,33 @@
+<head>
+  <title>LongestString</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick="longeststrfromarr()">Find the longest string from an given array of strings.
+</button><br>
+<p>Find the longest string from an given array of strings.<br>
+</p>
+<span id="result"></span>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function longeststrfromarr(){
+  const strarr = document.getElementById("userstr").value.split(',');
+
+  let maxval = strarr[0].length;
+  let result;
+//let maxval = 0;
+// for(let i=0;i<strarray.length;i++){
+//   if(maxval < strarray[i].length){
+//     maxval = strarray[i].length;
+//     result = strarray[i];
+//   }
+//   document.getElementById("result").innerHTML = result;
+// }
+  strarr.map(element => maxval = Math.max(maxval,element.length));
+  result = strarr.filter(element => element.length == maxval);
+  document.getElementById("result").innerHTML = result;
+}
+</script>

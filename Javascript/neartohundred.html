@@ -1,0 +1,28 @@
+<head>
+  <title>Nearertohundred</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<button onclick=neartohundred()>Check for the num nearer to Hundred</button>
+<p>Find a value which is nearest to 100 from two different given integer values.</p>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function neartohundred(){
+  const numberone = parseInt(document.getElementById("firstnum").value);
+  const numbertwo = parseInt(document.getElementById("secondnum").value);
+
+  let nearval = 0 ;
+
+  if(Math.abs(100-numberone) < Math.abs(100-numbertwo))
+    nearval = numberone;
+  else
+    nearval = numbertwo;
+document.getElementById("result").innerHTML = nearval;
+}
+</script>

@@ -1,0 +1,22 @@
+<head>
+  <title>Startswithstring</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<button onclick="startstring()">Test if a string begins with "Los" or "New"</button><br>
+
+<p>Display the city name if the string begins with "Los" or "New" otherwise return blank.<br>
+</p>
+<span id="result"></span>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function startstring(){
+  const str = document.getElementById("userstr").value;
+  if(str.startsWith("Los") || str.startsWith("New"))
+    document.getElementById("result").innerHTML = str;
+  else
+    document.getElementById("result").innerHTML = "";
+}
+</script>

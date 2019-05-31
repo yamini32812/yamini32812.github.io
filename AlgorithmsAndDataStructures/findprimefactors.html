@@ -1,0 +1,37 @@
+<p>
+<span>Enter number:</span>
+<input id="usernum" text></input><br><br>
+
+<button onclick=findprimefactors()>Find prime factors of a given number.</button><br>
+<p>Find prime factors of a given number.</p>
+<span id="result"/>
+</p>
+<script>
+
+window.onload = function(){
+  document.getElementById("usernum").focus();
+}
+
+function findprimefactors(){
+  let num = parseInt(document.getElementById("usernum").value);
+  let primearr = [];
+  let count = 0;
+  if(num % 2 == 0){
+    primearr.push(2);
+    count++;
+  }
+  for (let i = 3;i<= num;i=i+2) {
+    while(num % i == 0){
+      primearr.push(i);
+      num = num / i;
+      count++;
+    }
+  }
+
+  if(count == 0)
+    primearr.push(num);
+
+ let uniqprimearr = Array.from(new Set(primearr));
+ document.getElementById('result').innerHTML = uniqprimearr;
+}
+</script>

@@ -1,0 +1,38 @@
+
+<head>
+  <title>Mode</title>
+</head>
+<p><span>Enter array of nums:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick=mostoccnuminarr()>Find the number which appears
+  most in a given array of integers.</button><br>
+<p>Find the number which appears most in a given array of integers.</p>
+<span id="result"/>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function mostoccnuminarr(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  let numarr = strarr.map(Number);
+
+  let count = {},max=0,freq=0,modes=[];
+  numarr.forEach(function (val) {
+    count[val] = (count[val] || 0) + 1;
+    if (count[val] > freq)
+    {
+      freq=count[val];
+    }
+  });
+  for (let val in count)
+  {
+    if (count[val] == freq)
+      modes.push(val);
+  }
+  document.getElementById("result").innerHTML = modes;
+}
+</script>

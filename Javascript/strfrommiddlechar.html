@@ -1,0 +1,22 @@
+<head>
+  <title>Strfrommiddlechar</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick="strfrommiddlechar()">Create a string using the middle three characters.
+</button><br>
+<p>Create a string using the middle three characters of a given string of odd length.
+   The string length must be greater or equal to three.</p>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function strfrommiddlechar(){
+  const str = document.getElementById("userstr").value;
+  if((str.length % 2 != 0) && (str.length >= 3))
+    document.getElementById("result").innerHTML = str.substr(((str.length-1)/2)-1,3);
+}
+</script>

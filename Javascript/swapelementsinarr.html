@@ -1,0 +1,29 @@
+<head>
+  <title>Swapelementsinarr</title>
+</head>
+<p><span>Enter array of nums:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick=swapelementsinarr()>Swap the first and last elements
+  of a given array of integers.</button><br>
+<p>Swap the first and last elements of a given array of integers.
+  The array length should be at least 1</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function swapelementsinarr(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  let numarr = strarr.map(Number);
+
+  let temp = numarr[0];
+
+  numarr[0] = numarr[numarr.length - 1];
+  numarr[numarr.length - 1] = temp;
+
+  document.getElementById("result").innerHTML = numarr;
+}
+</script>

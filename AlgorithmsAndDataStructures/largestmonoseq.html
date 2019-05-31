@@ -1,0 +1,50 @@
+<p>
+<span>Enter array of num:</span>
+<input id="userarr" text></input><br><br>
+
+<button onclick=largestmonoseq()>Find the length of the largest monotone increasing
+  subsequence in an array.</button><br>
+<p>Find the length of the largest monotone increasing
+  subsequence in an array.<br>
+<span id="result"/><br>
+<p id="result1"/></p>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("userarr").focus();
+}
+  function largestmonoseq(){
+    let strarr = document.getElementById("userarr").value.split(',');
+    let numarr = strarr.map(Number);
+
+    let maxj=0,pmax=0,current=0,length = [],maxlength = 0;
+
+    for(let i=1;i<numarr.length;i++){
+      current = numarr[i];
+      if(current < numarr[pmax])
+      {
+        maxj=0;
+        for(let j=1;j<(i-1);j++)
+        {
+          if(numarr[j] < current)
+          {
+            if(maxj <length[j])
+              maxj = length[j];
+          }
+        }
+        length[i]= maxj+1;
+        if(length[i]>maxlength){
+          maxlength++;
+          pmax = i;
+        }
+      }
+      else{
+        maxlength ++;
+        length[i] = maxlength;
+        pmax = i;
+      }
+    }
+  document.getElementById("result").innerHTML = maxlength;
+  document.getElementById("result1").innerHTML = pmax;
+}
+</script>

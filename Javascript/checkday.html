@@ -1,0 +1,22 @@
+<head>
+  <title>Checkday</title>
+</head>
+<p>
+<button onclick="yearstartingonsun()" id="year">Check which year(between 2014 and 2050) starts on Sunday.</button><br><br>
+<span id="result"/>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("year").focus();
+};
+
+function yearstartingonsun(){
+  for(let year=2014; year<=2050; year++)
+  {
+    const dat = new Date(year,0,1);
+    if(dat.getDay() === 0)
+      document.getElementById("result").innerHTML = year;
+  }
+}
+</script>

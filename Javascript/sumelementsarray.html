@@ -1,0 +1,21 @@
+<head>
+  <title>Sumofarrelements</title>
+</head>
+<p><span>Enter array of numbers:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick=sumofarrelements()>Compute the sum of three elements</button><br>
+<p>Compute the sum of three elements of a given array of integers of length 3.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function sumofarrelements(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  let numarr = strarr.map(Number);
+
+  document.getElementById("result").innerHTML = numarr[0]+numarr[1]+numarr[2];
+}
+</script>

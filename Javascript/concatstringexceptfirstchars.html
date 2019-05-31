@@ -1,0 +1,25 @@
+<head>
+  <title>Concatstrminusfirstchars</title>
+</head>
+<p><span>Enter first string:</span>
+<input id="userstrone" text></input><br><br>
+<span>Enter second string:</span>
+<input id="userstrtwo" text></input><br><br>
+<button onclick="concatstrminusfirstchars()" type="submit" value="submit">Concatenate two strings except their first character.
+</button><br>
+<p>Concatenate two strings except their first character.</p>
+<span id="result"></span>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("userstrone").focus();
+};
+
+function concatstrminusfirstchars(){
+  const strone = document.getElementById("userstrone").value;
+  const strtwo = document.getElementById("userstrtwo").value;
+
+  document.getElementById("result").innerHTML = strone.slice(1)+ strtwo.slice(1);
+}
+</script>

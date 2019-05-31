@@ -1,0 +1,23 @@
+<head>
+  <title>HalveString</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<button onclick="halvestring()">Extract the first half of a string of even length</button><br>
+<p>Extract the first half of a string of even length.<br>
+</p>
+<span id="result"></span>
+<script>
+
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function halvestring(){
+  const str = document.getElementById("userstr").value;
+  if(str.length % 2 == 0)
+    document.getElementById("result").innerHTML = str.slice(0,str.length/2);
+  else
+    document.getElementById("result").innerHTML = 'String must be of even length';
+}
+</script>

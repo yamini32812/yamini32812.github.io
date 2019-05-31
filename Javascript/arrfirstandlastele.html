@@ -1,0 +1,25 @@
+<head>
+  <title>Arrfirstandlastelements</title>
+</head>
+<p><span>Enter array of nums:</span>
+<input id="userstr" text></input><br><br>
+<button onclick=firstlastnumarr() type="submit" value="submit">Create a new array taking the first
+  and last elements from a given array.</button><br>
+<p>Create a new array taking the first and last elements from a given array
+  of integers and length must be greater or equal to 1.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function firstlastnumarr(){
+  const strarr = document.getElementById("userstr").value.split('');
+
+  let resultarr = [0,0];
+  //Using parseInt only on the concerned elements.
+  resultarr = [parseInt(strarr[0]),parseInt(strarr[strarr.length-1])];
+  document.getElementById("result").innerHTML = resultarr;
+}
+</script>

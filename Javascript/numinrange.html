@@ -1,0 +1,33 @@
+<head>
+  <title>Numinrange</title>
+</head>
+<p><span>Enter num:</span>
+<input id="usernum" text></input><br><br>
+<span>Enter the min num in the Range:</span>
+<input id="lowerrange" text></input><br><br>
+<span>Enter the max num in the Range:</span>
+<input id="higherrange" text></input><br><br>
+<button onclick="numinrange()">Check for number within given range</button>
+<p>Check if a number in the range 40..10000 inclusive presents in two number (in same range).<br>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("usernum").focus();
+};
+function numinrange(){
+  const number = parseInt(document.getElementById("usernum").value);
+  const lowerrange = parseInt(document.getElementById("lowerrange").value);
+  const higherrange = parseInt(document.getElementById("higherrange").value);
+
+  if(lowerrange < 40 && higherrange > 10000)
+    document.getElementById("result").innerHTML = false;
+  else
+  {
+    if(number > lowerrange && number < higherrange)
+    document.getElementById("result").innerHTML = true;
+    else
+    document.getElementById("result").innerHTML = false;
+  }
+}
+</script>

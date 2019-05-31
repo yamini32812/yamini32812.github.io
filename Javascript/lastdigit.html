@@ -1,0 +1,27 @@
+<head>
+  <title>Lastdigit</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<span>Enter third num:</span>
+<input id="thirdnum" text></input><br><br>
+<button onclick=lastdigitofthree()>Check if the last digit of the three given positive integers is same.</button>
+<p>Check if the last digit of the three given positive integers is same. </p><br>
+<span id="result"></span>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function lastdigitofthree(){
+  const numberone = parseInt(document.getElementById("firstnum").value);
+  const numbertwo = parseInt(document.getElementById("secondnum").value);
+  const numberthree = parseInt(document.getElementById("thirdnum").value);
+
+  if((numberone % 10 == numbertwo % 10) && (numbertwo % 10 == numberthree % 10))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

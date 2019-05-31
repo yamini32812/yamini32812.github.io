@@ -1,0 +1,25 @@
+<head>
+  <title>Strwofirstandlastcharifp</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick="strwofirstandlastcharifp()">Create a new string without the first
+  and last character if 'P'
+</button><br>
+<p>Create a new string without the first and last character of a given string if 'P'.
+   Return the original string if the condition is not satisfied.<br>
+</p>
+<span id="result"></span>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function strwofirstandlastcharifp(){
+  const str = document.getElementById("userstr").value;
+  if(str.startsWith('P') || str.endsWith('P'))
+    document.getElementById("result").innerHTML = str.slice(1,str.length-1);
+  else
+    document.getElementById("result").innerHTML = str;
+}
+</script>

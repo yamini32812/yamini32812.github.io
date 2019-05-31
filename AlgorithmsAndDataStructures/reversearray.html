@@ -1,0 +1,25 @@
+<p>
+<span>Enter array of num:</span>
+<input id="userarr" text></input><br><br>
+
+<button onclick=reversearray()>Reverse the array of numbers.</button><br>
+<p>Reverse the array of numbers.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("userarr").focus();
+}
+  function reversearray(){
+    let strarr = document.getElementById("userarr").value.split(',');
+    let numarr = strarr.map(Number);
+    let temp;
+
+    for(let i=0,j=numarr.length-1;i<j;i++,j--){
+      temp = numarr[i];
+      numarr[i] = numarr[j];
+      numarr[j] = temp;
+    }
+document.getElementById("result").innerHTML = numarr;
+}
+</script>

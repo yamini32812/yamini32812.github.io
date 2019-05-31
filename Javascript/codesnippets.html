@@ -1,0 +1,312 @@
+<p>Enter temperature in Celsius:<input id="tempc" text></input></p>
+<p>Enter temperature in Fahrenheit:<input id="tempf" text></input></p>
+<button id="convert" onclick=convert()>Convert</button>
+<p id="resultf"></p>
+<p id="resultc"></p>
+<script>
+function convert(){
+  const celsius = document.getElementById("tempc").value;
+  const fahrenheit = document.getElementById("tempf").value;
+  document.getElementById("resultf").innerHTML = 'Fahrenheit' + (celsius* 9/5) + 32;
+  document.getElementById("resultc").innerHTML = 'Celcius' + (fahrenheit-32)* (5/9);
+}
+</script>
+
+<p>Create a variable using a user-defined name<br>
+<span id="userdefname"/></p>
+<script>
+  const name = "Yamini";
+  const value = "100%";
+  this[name] = value;
+  document.getElementById("userdefname").innerHTML = this[name];
+</script>
+
+<p>Get the extension of a filename<br>
+<span id="filenameextn"/>
+</p>
+<script>
+  const filename = "index.html";
+  const extn = filename.split('.');
+  document.getElementById("filenameextn").innerHTML = extn[1];
+</script>
+
+<p>Difference between a given number and 13,
+  if the number is greater than 13 return double the absolute difference.<br>
+<input id="user number" text></input>
+<button onclick=diff()>Submit</button>
+<span id="result"/>
+</p>
+<script>
+function diff(){
+  const number = document.getElementById("usernumber").value;
+
+  if(number < 13)
+    document.getElementById("result").innerHTML = 13-number;
+  else
+    document.getElementById("result").innerHTML = Math.abs(number - 13) * 2;
+}
+</script>
+
+<p>compute the sum of the two given integers.
+  If the two values are same, then returns triple their sum.<br>
+<span>Enter first number:</span>
+<input id="firstnumber" text/><br>
+<span>Enter second number:</span>
+<input id="secondnumber" text/><br>
+<button onclick=sum()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function sum(){
+  const numberone = parseInt(document.getElementById("firstnumber").value);
+  const numbertwo = parseInt(document.getElementById("secondnumber").value);
+
+  if(numberone == numbertwo)
+    document.getElementById("result").innerHTML = (numberone + numbertwo) * 3;
+  else
+    document.getElementById("result").innerHTML = (numberone + numbertwo);
+}
+</script>
+
+<p>Compute the absolute difference between a specified number and 19.
+  Returns triple their absolute difference if the specified number is greater than 19. <br>
+<span>Enter number:</span>
+<input id="usernumber" text></input>
+<button onclick=diff()>Submit</button>
+<span id="result"/>
+</p>
+<script>
+function diff(){
+  const number = document.getElementById("usernumber").value;
+
+  if(number < 19)
+    document.getElementById("result").innerHTML = 19-number;
+  else
+    document.getElementById("result").innerHTML = Math.abs(number - 19) * 3;
+}
+</script>
+
+<p>Check two given numbers and return true if one of the number is 50 or if their sum is 50.<br>
+<span>Enter first number:</span>
+<input id="firstnumber" text/><br>
+<span>Enter second number:</span>
+<input id="secondnumber" text/><br>
+<button onclick=sum()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function sum(){
+  const numberone = parseInt(document.getElementById("firstnumber").value);
+  const numbertwo = parseInt(document.getElementById("secondnumber").value);
+
+  if(numberone == 50 || numbertwo == 50 || ((numberone + numbertwo)== 50))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>
+
+<p>Check a given integer is within 20 of 100 or 400.<br>
+<span>Enter number:</span>
+<input id="usernumber" text></input><br>
+<button onclick=checkdiff()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function checkdiff(){
+  const number = document.getElementById("usernumber").value;
+
+  if((Math.abs(100-number) <= 20) || (Math.abs(400-number) <= 20))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>
+
+<p>Check from two given integers, if one is positive and one is negative.<br>
+<span>Enter first number:</span>
+<input id="firstnumber" text/><br>
+<span>Enter second number:</span>
+<input id="secondnumber" text/><br>
+<button onclick=checkposneg()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function checkposneg(){
+  const numberone = parseInt(document.getElementById("firstnumber").value);
+  const numbertwo = parseInt(document.getElementById("secondnumber").value);
+
+  if((numberone > 0 && numbertwo < 0)||(numberone < 0 && numbertwo > 0))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>
+
+<p>Create a new string adding "Py" in front of a given string.
+  If the given string begins with "Py" then return the original string.<br>
+<span>Enter string:</span>
+<input id="userstring" text></input>
+<button onclick=addstring()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function addstring(){
+  const str = document.getElementById("userstring").value;
+
+  if(str.startsWith('Py'))
+    document.getElementById("result").innerHTML = str;
+  else
+    document.getElementById("result").innerHTML = `Py${str}`;
+}
+</script>
+
+<p>Remove a character at the specified position of a given string and return the new string.<br>
+<span>Enter string:</span>
+<input id="userstring" text></input><br>
+<span>Enter position of Char to be removed:</span>
+<input id="remchr" text></input><br>
+<button onclick=checkstring()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function checkstring(){
+  const str = document.getElementById("userstring").value;
+  const pos = document.getElementById("remchr").value;
+
+  document.getElementById("result").innerHTML = str.replace(pos,'');
+}
+</script>
+
+<p>Create a new string from a given string changing the position of first and last characters.
+  The string length must be greater than or equal to 1.<br>
+<span>Enter string:</span>
+<input id="userstring" text></input><br>
+<button onclick=checkstring()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function checkstring(){
+  const str = document.getElementById("userstring").value;
+  if(str.length >= 1)
+  {
+  let strarr = str.split('');
+  let temp = '';
+  temp = strarr[0];
+  strarr[0] = strarr[str.length-1];
+  strarr[str.length-1] = temp;
+  document.getElementById("result").innerHTML = strarr.join('');
+  }
+}
+</script>
+
+<p>Create a new string from a given string with the first character of the given string
+   added at the front and back.<br>
+<span>Enter string:</span>
+<input id="userstring" text></input><br>
+<button onclick=newstring()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function newstring(){
+  const str = document.getElementById("userstring").value;
+
+  document.getElementById("result").innerHTML = str[0] + str + str[0];
+}
+</script>
+
+<p>Check if a given positive number is a multiple of 3 or a multiple of 7.<br>
+<span>Enter number:</span>
+<input id="usernumber" text></input><br>
+<button onclick=divisible()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function divisible(){
+  const num = document.getElementById("usernumber").value;
+
+  if(num>0 && (num % 3 == 0 || num % 7 == 0))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>
+
+<p>Create a new string from a given string taking the last 3 characters and
+  added at both the front and back. The string length must be 3 or more.<br>
+<span>Enter string:</span>
+<input id="userstring" text></input><br>
+<button onclick=newstring()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function newstring(){
+  const str = document.getElementById("userstring").value;
+  if(str.length > 3)
+    document.getElementById("result").innerHTML = str.slice(-3) + str + str.slice(-3);
+}
+</script>
+
+<p>Check if a string starts with 'Java' and false otherwise.<br>
+<span>Enter string:</span>
+<input id="userstring" text></input>
+<button onclick=checkstring()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function checkstring(){
+  const str = document.getElementById("userstring").value;
+
+  if(str.startsWith('Java'))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>
+
+<p>Check if two given integer values are in the range 50..99 (inclusive).
+  Return true if either of them are in the said range. <br>
+<span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<button onclick=checkrange()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function checkrange(){
+  const numberone = parseInt(document.getElementById("firstnum").value);
+  const numbertwo = parseInt(document.getElementById("secondnum").value);
+
+  if((numberone >= 50 && numberone <= 99)||(numbertwo >= 50 && numbertwo <= 99))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>
+
+<p>Check if three given integer values are in the range 50..99 (inclusive).
+   Return true if one or more of them are in the said range. <br>
+<span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<span>Enter third num:</span>
+<input id="thirdnum" text>No3</input><br>
+<button onclick=checkrange()>Submit</button><br>
+<span id="result"/>
+</p>
+<script>
+function checkrange(){
+  const numberone = parseInt(document.getElementById("firstnum").value);
+  const numbertwo = parseInt(document.getElementById("secondnum").value);
+  const numberthree = parseInt(document.getElementById("thirdnum").value);
+
+  if((numberone >= 50 && numberone <= 99) ||
+     (numbertwo >= 50 && numbertwo <= 99) ||
+     (numberthree >= 50 && numberthree <= 99))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

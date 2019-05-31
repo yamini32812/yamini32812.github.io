@@ -1,0 +1,33 @@
+<head>
+  <title>AddNumWoCarry</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="usernumone" text></input><br><br>
+<span>Enter second num:</span>
+<input id="usernumtwo" text></input><br><br>
+<button onclick=addnumwocarry() type="submit" value="submit">Add two positive integers without carry.</button><br>
+<p>Add two positive integers without carry.</p>
+<span id="result"/>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("usernumone").focus();
+};
+
+function addnumwocarry(){
+  let numberone = parseInt(document.getElementById("usernumone").value);
+  let numbertwo = parseInt(document.getElementById("usernumtwo").value);
+
+  let result = 0;
+  let x = 1;
+
+  while (numberone > 0 && numbertwo > 0) {
+        result += x * ((numberone + numbertwo) % 10);
+        numberone = Math.floor(numberone / 10);
+        numbertwo = Math.floor(numbertwo / 10);
+        x*= 10;
+      }
+  document.getElementById("result").innerHTML = result;
+}
+</script>

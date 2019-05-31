@@ -1,0 +1,27 @@
+<head>
+  <title>CopyString</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<span>Enter no of copies:</span>
+<input id="numofcopies" text></input><br><br>
+<button onclick="copystring()">Create a new string of specified copies</button><br>
+<p>Create a new string of specified copies (positive number) of a given string.</p>
+<span id="result"></span>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function copystring(){
+  let str = document.getElementById("userstr").value;
+  const numofcopies = parseInt(document.getElementById("numofcopies").value);
+  let newstr='';
+  for(let i=1;i<=numofcopies;i++){
+    newstr += str;
+  }
+  document.getElementById("result").innerHTML = newstr;
+}
+</script>

@@ -1,0 +1,31 @@
+<p>
+<span>Enter num:</span>
+<input id="usernum" text></input><br><br>
+
+<button onclick=smallestdivisor()>Find the smallest divisor of a given number.</button><br>
+<p>Find the smallest divisor of a given number.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("usernum").focus();
+}
+function smallestdivisor(){
+  const num = parseInt(document.getElementById("usernum").value);
+  if(num == 1)
+    document.getElementById('result').innerHTML = 1;
+  if(num % 2 == 0)
+    document.getElementById('result').innerHTML = 2;
+  else{
+    for (let i = 3; i * i <= num; i += 2)
+    {
+      if (num % i == 0)
+      {
+        document.getElementById('result').innerHTML = i;
+        return;
+      }
+    }
+  document.getElementById('result').innerHTML = num;
+  }
+}
+</script>

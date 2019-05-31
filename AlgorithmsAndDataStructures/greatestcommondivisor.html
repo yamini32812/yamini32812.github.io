@@ -1,0 +1,26 @@
+<p>
+<span>Enter first num:</span>
+<input id="usernumone" text></input><br><br>
+<span>Enter second num:</span>
+<input id="usernumtwo" text></input><br><br>
+
+<button onclick=greatestcommondivisor()>Find the greatest common divisor of two numbers.</button><br>
+<p>Find the greatest common divisor of two numbers.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("usernumone").focus();
+}
+function greatestcommondivisor(){
+  let firstnum = parseInt(document.getElementById("usernumone").value);
+  let secondnum = parseInt(document.getElementById("usernumtwo").value);
+
+  while(secondnum){
+    let temp = secondnum;
+    secondnum = firstnum % secondnum;
+    firstnum = temp;
+  }
+  document.getElementById('result').innerHTML = firstnum;
+}
+</script>

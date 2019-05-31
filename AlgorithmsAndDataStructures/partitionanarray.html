@@ -1,0 +1,48 @@
+<span>Enter array of num:</span>
+<input id="userarr" text></input><br><br>
+<span>Enter num to partition:</span>
+<input id="usernum" text></input><br><br>
+
+<button onclick=partitionarray()>Partition the array of numbers.</button><br>
+<p>Partition the array of numbers.<br>
+<span id="result"/><br>
+<p id="result1"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("userarr").focus();
+}
+  function partitionarray(){
+    let strarr = document.getElementById("userarr").value.split(',');
+    let numarr = strarr.map(Number);
+    let partitionnum = parseInt(document.getElementById("usernum").value);
+    let temp = 0,i=0,j=numarr.length-1;
+
+    while((i<j) && numarr[i] <= partitionnum)
+      i++;
+
+    while((i<j) && numarr[j] > partitionnum)
+      j--;
+
+    if(numarr[j] > partitionnum)
+      j--;
+
+    while(i<j)
+    {
+      temp = numarr[i];
+      numarr[i] = numarr[j];
+      numarr[j] = temp;
+      i++;
+      j--;
+
+      while(numarr[i] <= partitionnum)
+      i++;
+
+      while(numarr[j] > partitionnum)
+      j--;
+    }
+
+document.getElementById("result").innerHTML = numarr;
+document.getElementById("result1").innerHTML = j;
+}
+</script>

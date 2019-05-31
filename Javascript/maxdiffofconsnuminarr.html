@@ -1,0 +1,28 @@
+<head>
+  <title>Maxdiffofconsnuminarr</title>
+</head>
+<p><span>Enter array of nums:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick=maxdiffofconsnuminarr()>Find the maximal difference between any
+  two adjacent elements of a given array of integers.</button><br>
+<p>Find the maximal difference between any
+  two adjacent elements.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function maxdiffofconsnuminarr(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  let numarr = strarr.map(Number);
+  let maxval = 0,temp;
+
+  for(let i=0;i<numarr.length-1;i++){
+    temp = (numarr[i+1]-numarr[i]);
+    maxval = Math.max(maxval,temp);
+  }
+  document.getElementById("result").innerHTML = maxval;
+}
+</script>

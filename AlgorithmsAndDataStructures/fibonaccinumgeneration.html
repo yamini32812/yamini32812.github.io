@@ -1,0 +1,21 @@
+<p>
+<span>Enter number of Fibonacci series to be generated:</span>
+<input id="usernum" text></input><br><br>
+
+<button onclick=fibseq()>Calculate fibonacci series.</button><br>
+<p>Calculate fibonacci series till n.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("usernum").focus();
+}
+  function fibseq(){
+    const num = parseInt(document.getElementById("usernum").value);
+    let fibarr = [0,1];
+    for(let i=2;i<num;i++){
+      fibarr.push(fibarr[i-2] + fibarr[i-1]);
+    }
+    document.getElementById("result").innerHTML = fibarr;
+}
+</script>

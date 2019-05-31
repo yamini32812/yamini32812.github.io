@@ -1,0 +1,27 @@
+<head>
+  <title>Areaoftriangle</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<span>Enter third num:</span>
+<input id="thirdnum" text></input><br><br>
+<button onclick=trianglearea()>Find triangle area.</button>
+<p>Find triangle area with three sides.</p>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function trianglearea(){
+  const sideone = parseInt(document.getElementById("firstnum").value);
+  const sidetwo = parseInt(document.getElementById("secondnum").value);
+  const sidethree = parseInt(document.getElementById("thirdnum").value);
+
+  const s = (sideone + sidetwo + sidethree)/2;
+
+  document.getElementById("result").innerHTML = Math.sqrt(s * ((s-sideone) * (s-sidetwo) * (s-sidethree)));
+}
+</script>

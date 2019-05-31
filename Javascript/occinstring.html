@@ -1,0 +1,27 @@
+<head>
+  <title>Occinstring</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<span>Enter char to be searched:</span>
+<input id="searchstr" text></input><br><br>
+<button onclick="occinstring()">Check a given string contains 2 to 4 numbers of a specified character</button><br>
+<p>Check a given string contains 2 to 4 numbers of a specified character.</p>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function occinstring(){
+  const str = document.getElementById("userstr").value;
+  const searchstr = document.getElementById("searchstr").value;
+
+  const occinstring = new RegExp(searchstr,'g');
+
+  if(str.match(occinstring).length >=2 && str.match(occinstring).length <=4)
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

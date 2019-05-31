@@ -1,0 +1,40 @@
+<p>
+<span>Enter array of num:</span>
+<input id="userarr" text></input><br><br>
+
+<button onclick=shellsort()>Sort the array in ascending order.</button><br>
+<p>Sort the array in ascending order.</p>
+<span id="result"/><br>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("userarr").focus();
+}
+  function shellsort(){
+    let strarr = document.getElementById("userarr").value.split(',');
+    let numarr = strarr.map(Number);
+
+    let increment = numarr.length / 2;
+
+    while(increment>0)
+    {
+      for(let i=increment;i<numarr.length;i++)
+      {
+        let j = i;
+        let temp = numarr[i];
+
+        while((j>=increment) && (numarr[j-increment]>temp))
+          {
+            numarr[j] = numarr[j-increment];
+            j = j - increment;
+          }
+          numarr[j] = temp;
+        }
+        if(increment==2)
+          increment = 1;
+        else
+          increment = parseInt(increment * 5/11);
+      }
+    document.getElementById("result").innerHTML = numarr;
+   }
+</script>

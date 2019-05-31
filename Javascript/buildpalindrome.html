@@ -1,0 +1,25 @@
+
+<input id="string" text>Enter a string:</input><br><br>
+
+<button onclick=buildpalindrome()>Make a palindrome.</button><br>
+<p>Find the shortest possible string which can create a string
+  to make it a palindrome by adding characters to the end of it.<br>
+<span id="result"/>
+</p>
+<script>
+function buildpalindrome(){
+let str = document.getElementById("string").value;
+
+    for(let k=str.length-1;k>0;k--){
+      if(str[k] != str[k-1]){
+        for(let i=k-1;i>=0;i--){
+          str += str[i];
+        }
+      }
+    break;
+  }
+
+    document.getElementById('result').innerHTML = str;
+  }
+
+</script>

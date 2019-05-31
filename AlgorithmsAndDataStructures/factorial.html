@@ -1,0 +1,25 @@
+<p>
+<span>Enter num:</span>
+<input id="usernum" text></input><br><br>
+
+<button onclick=factorial()>Calculate factorial.</button><br>
+<p>Calculate factorial.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("usernum").focus();
+}
+  function factorial(){
+    let number = parseInt(document.getElementById("usernum").value);
+    let factorial = 1;
+    if(number == 0)
+      factorial = 1;
+    else{
+      for(let i=1;i<=number;i++){
+        factorial = factorial * i;
+      }
+    }
+  document.getElementById("result").innerHTML = factorial;
+}
+</script>

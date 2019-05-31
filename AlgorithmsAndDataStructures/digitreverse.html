@@ -1,0 +1,22 @@
+<p>
+<span>Enter num:</span>
+<input id="usernum" text></input><br><br>
+
+<button onclick=reversedigit()>Reverse the digits of a given number.</button><br>
+<p>Reverse the digits of a given number.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("usernum").focus();
+}
+function reversedigit(){
+  let num = parseInt(document.getElementById("usernum").value);
+  let reverse = 0;
+  while(num>0){
+    reverse = (reverse * 10) + (num % 10);
+    num = Math.floor(num / 10);
+  }
+  document.getElementById('result').innerHTML = reverse;
+}
+</script>

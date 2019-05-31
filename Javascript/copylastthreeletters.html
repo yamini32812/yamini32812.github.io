@@ -1,0 +1,27 @@
+<head>
+  <title>Copylastthreeletters</title>
+</head>
+<p>
+  <span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<button onclick="copylastthreeletters()" type="submit" value="submit">Create a new string from a repeated substring.</button><br>
+<p>Create a new string of 4 copies of the last 3 characters of a given original string.
+   The length of the given string must be 3 and above.</p>
+<span id="result"></span>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function copylastthreeletters(){
+  const str = document.getElementById("userstr").value;
+  if(str.length > 3){
+    let newstr = str.slice(-3) + str.slice(-3) + str.slice(-3) + str.slice(-3);
+    document.getElementById("result").innerHTML = newstr;
+  }
+  else
+    document.getElementById("result").innerHTML = str;
+}
+</script>

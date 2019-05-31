@@ -1,0 +1,24 @@
+<head>
+  <title>Reversestring</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<button onclick="reversestring()">Reverse a given string</button><br>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function reversestring(){
+  const str= document.getElementById("userstr").value;
+  let newstr='';
+
+  for(let j=str.length-1;j>=0;j--)
+  {
+    newstr += str[j];
+  }
+
+  document.getElementById("result").innerHTML = newstr;
+}
+</script>

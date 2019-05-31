@@ -1,0 +1,45 @@
+<p>
+<span>Enter number:</span>
+<input id="usernum" text></input><br><br>
+
+<button onclick=insertionsort()>Sort the array in ascending order.</button><br>
+<p>Sort the array in ascending order.</p>
+<span id="result"/><br>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("usernum").focus();
+}
+
+function insertionsort(){
+  let strarr = document.getElementById("usernum").value.split(',');
+  let numarr = strarr.map(Number);
+
+  let j=0,curr=0;
+  let first = numarr[0],pos = 0;
+
+  for(let i=1;i<numarr.length;i++)
+  {
+    if(numarr[i]<first)
+    {
+      first = numarr[i];
+      pos = i;
+    }
+    numarr[pos] = numarr[0];
+    numarr[0] = first;
+
+    for(i=2;i<numarr.length;i++)
+    {
+      curr = numarr[i];
+      j = i;
+      while(curr < numarr[j-1])
+      {
+        numarr[j] = numarr[j-1];
+        j--;
+      }
+      numarr[j] = curr;
+    }
+  }
+  document.getElementById("result").innerHTML = numarr;
+}
+</script>

@@ -37,10 +37,13 @@
 				</div>
 
 				<div id="menu">
-					 <button class = "button">Home</button>
-					 <!-- <button class = "button">linkedin profile</button>
-					 <button class = "button">Udacity Profile</button> -->
-					 <button class = "button">Resume</button>
+					 <a href="index.html" class = "button">Home</a>
+					 <a href="about.html" class = "button">About</a>
+					 <a href="https://yaminichandramouli.blogspot.com/" class = "button">Blog</a>
+					 <a href="Javascript" class = "button">Javascript Practice</a>
+					 <a href="AlgorithmsAndDataStructures" class = "button">Algorithms and Datastructures</a>
+					 <a href="img/Resume.pdf" class = "button">Resume</a>
+					 <a href="contact.html" class = "button">Contact</a>
 				</div>
 
 			</header>
@@ -56,15 +59,23 @@
 			<div id="main">
 
 			<div>
-				<h2 id ="subheading">Featured Work</h2>
+				<h2 id ="subheading">FEND Projects</h2>
 			</div>
 			<!--The images of the featured work section.-->
 			<div class = "carousalContainer">
 
-				<button id="prev" onclick="prevSlide()">PREV</button>
-				<img class="carousalImage" src="img/pen.jpeg" alt="Project 1">
-				<button id="next" onclick="nextSlide()">NEXT</button>
-
+				<button id="prev" onclick="controller.prevSlide()">PREV</button>
+				<figure>
+					<img class="carousalImage" src="" alt="Project 1">
+					<figcaption>
+							<p id="projectWebpageLink"/>
+							<p id="projectGithubLink"/>
+					</figcaption>
+				</figure>
+				<button id="next" onclick="controller.nextSlide()">NEXT</button><br>
+			</div>
+			<div class="center">
+					<a href="https://github.com/yamini32812">Find more projects in my GitHub</a>
 			</div>
 		</div>
 

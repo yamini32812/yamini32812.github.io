@@ -1,0 +1,36 @@
+<head>
+  <title>Replacechars</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<button onclick="replacechar()">Replace every character</button><br>
+<p> Replace every character in a given
+  string with the character following it in the alphabet.
+</p>
+<span id="result"/>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function replacechar(){
+  const str = document.getElementById("userstr").value;
+  let strarr = str.split('');
+
+  for(let i=0;i<strarr.length;i++){
+    switch(strarr[i]){
+      case ' ':
+              break;
+      case 'z':
+              strarr[i]='a';
+              break;
+      case 'Z':
+              strarr[i] = 'A';
+              break;
+      default:
+              strarr[i] = String.fromCharCode(1 + strarr[i].charCodeAt(0));
+            }
+    }
+
+  document.getElementById("result").innerHTML = strarr.join('') ;
+}
+</script>

@@ -1,0 +1,37 @@
+<p>
+<span>Enter array of num:</span>
+<input id="userarr" text></input><br><br>
+
+<button onclick=selectionsort()>Sort the array in ascending order.</button><br>
+<p>Sort the array in ascending order.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("userarr").focus();
+}
+  function selectionsort(){
+    let strarr = document.getElementById("userarr").value.split(',');
+    let numarr = strarr.map(Number);
+
+    let pos,min;
+
+    for(let i=0;i<numarr.length;i++)
+    {
+      min = numarr[i];
+      pos =i;
+
+      for(let j=i+1;j<numarr.length;j++)
+      {
+        if(numarr[j]<min)
+        {
+          min = numarr[j];
+          pos = j;
+        }
+      }
+      numarr[pos] = numarr[i];
+      numarr[i] = min;
+      document.getElementById("result").innerHTML = numarr;
+    }
+   }
+</script>

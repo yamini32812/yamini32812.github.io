@@ -1,0 +1,26 @@
+<head>
+<title>Fizz Or Buzz</title>
+</head>
+<body>
+<p>Enter a number:
+  <input id='usernum' text></input><br><br>
+  <button onclick='fizzbuzz()'>FizzBuzz</button><br><br><br>
+</p>
+<script type="text/javascript">
+
+window.onload = function() {
+  document.getElementById("usernum").focus();
+};
+
+function fizzbuzz(){
+  const num = parseInt(document.getElementById('usernum').value);
+
+  if(num % 3 == 0 && num % 5 == 0)
+    document.write('<h1>FizzBuzz</h1>');
+  else if(num % 3 == 0)
+    document.write('<h4>Fizz</h4>');
+  else if(num % 5 == 0)
+   document.write('<h4>Buzz</h4>');
+}
+</script>
+</body>

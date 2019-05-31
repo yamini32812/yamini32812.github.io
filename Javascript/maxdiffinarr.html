@@ -1,0 +1,35 @@
+<head>
+  <title>Maxdiffnarr</title>
+</head>
+<p><span>Enter array of nums:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick=maxdiffinarr()>Find the maximal difference
+  among all possible pairs.</button><br>
+<p>Find the maximal difference
+  among all possible pairs of a given array of integers.</p>
+<span id="result"/>
+</p>
+
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function maxdiffinarr(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  let numarr=strarr.map(Number);
+
+  let max = numarr[0];
+  let min = numarr[0];
+
+  for(let i=1;i<numarr.length;i++)
+  {
+    if(numarr[i] > max)
+      max = numarr[i];
+
+    if(numarr[i] < min)
+      min = numarr[i];
+  }
+  document.getElementById("result").innerHTML = (max-min);
+}
+</script>

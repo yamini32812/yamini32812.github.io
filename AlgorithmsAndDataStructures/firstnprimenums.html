@@ -1,0 +1,33 @@
+<p>
+<span>Enter number:</span>
+<input id="usernum" text></input><br><br>
+
+<button onclick=genprimenums()>Generate first n primes.</button><br>
+<p>Generate primes until a given number.</p>
+<span style="width:40%" id="result"/>
+</p>
+
+<script>
+window.onload = function(){
+  document.getElementById("usernum").focus();
+}
+
+function genprimenums(){
+  const num = parseInt(document.getElementById("usernum").value);
+  let primearr = [2];
+
+  for (let i = 3;i <= num;i=i+2) {
+    let isPrime = true;
+    for (let j = 2;j * j <= i;j++)
+    {
+      if(i % j == 0){
+        isPrime = false;
+        break;
+      }
+    }
+    if(isPrime)
+      primearr.push(i);
+  }
+  document.getElementById('result').innerHTML = primearr;
+}
+</script>

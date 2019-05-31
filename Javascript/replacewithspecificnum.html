@@ -1,0 +1,35 @@
+
+<head>
+  <title>Replacewithspecificnums</title>
+</head>
+<p><span>Enter array of num:</span>
+<input id="userstr" text></input><br><br>
+<span>Enter num from the above array that will be replaced:</span>
+<input id="usernumoldval" text></input><br><br>
+<span>Enter new val that will replace old val:</span>
+<input id="usernumnewval" text></input><br><br>
+
+<button onclick="replwithspecnum()">Replace all the numbers with a specified number
+   of a given array of integers.</button><br>
+<p>Replace all the numbers with a specified number
+   of a given array of integers.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function replwithspecnum(){
+  const stringarr = document.getElementById("userstr").value.split(',');
+  let numarr = stringarr.map(Number);
+
+  let oldval = document.getElementById("usernumoldval").value;
+  let newval = document.getElementById("usernumnewval").value;
+
+  for(let i=0;i<numarr.length;i++){
+    if(numarr[i]==oldval)
+      numarr[i]= newval;
+  }
+  document.getElementById("result").innerHTML = numarr;
+}
+</script>

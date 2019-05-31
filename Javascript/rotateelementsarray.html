@@ -1,0 +1,25 @@
+
+<head>
+  <title>Rotateelements</title>
+</head>
+<p><span>Enter array of num:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick=rotateelements()>Rotate the elements left</button><br>
+<p>Rotate the elements left of a given array of integers of length 3.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function rotateelements(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  let numarr = strarr.map(Number);
+
+  numarr = [numarr[1],numarr[2],numarr[0]];
+
+  document.getElementById("result").innerHTML = numarr;
+}
+</script>

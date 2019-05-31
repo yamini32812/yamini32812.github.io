@@ -1,0 +1,21 @@
+<p>
+<span>Nth Fibonacci number to be generated:</span>
+<input id="usernum" text></input><br><br>
+<button onclick=nthfibnum()>Calculate Nth Fibonacci number.</button><br>
+<p>Calculate Nth Fibonacci number.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("usernum").focus();
+}
+  function nthfibnum(){
+    const num = parseInt(document.getElementById("usernum").value);
+    let fibarr = [];
+    for(let i=2;i<num;i++){
+      fibarr.push(fibarr[i-2] + fibarr[i-1]);
+    }
+    document.getElementById("result").innerHTML = fibarr;
+}
+</script>
+<!-- Not Completed

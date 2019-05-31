@@ -1,0 +1,26 @@
+<head>
+  <title>Quotientstring</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<button onclick="quotientstring()">Divide</button><br></p>
+<p>Divide two positive numbers and return a string with properly formatted commas.<br>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function quotientstring(){
+  const numberone = parseInt(document.getElementById("firstnum").value);
+  const numbersecond = parseInt(document.getElementById("secondnum").value);
+  let result = 0;
+
+  if((numberone > 0) && (numbersecond > 0))
+    result = (numberone/numbersecond).toLocaleString();
+
+  document.getElementById("result").innerHTML = result;
+}
+</script>

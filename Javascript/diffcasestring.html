@@ -1,0 +1,25 @@
+<head>
+  <title>Convertcase</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<button onclick=convertstring()>Submit</button><br>
+<p>Create new string with first 3 characters are in lower case.
+   If the string length is less than 3 convert all the characters in upper case.</p>
+<span id="result"/>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function convertstring(){
+  const str = document.getElementById("userstr").value;
+
+  if(str.length < 3)
+    document.getElementById("result").innerHTML = str.toUpperCase();
+  else
+    document.getElementById("result").innerHTML = str.slice(0,3).toLowerCase();
+}
+</script>

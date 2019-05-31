@@ -1,0 +1,28 @@
+<head>
+  <title>Checkforoneinarray</title>
+</head>
+<p><span>Enter array of nums:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick=checkforone() type="submit" value="submit">Check if 1 appears in first or last position</button><br>
+<p>Check if 1 appears in first or last position of a given array of integers.
+  The array length must be greater or equal to 1.</p>
+<span id="result"/>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function checkforone(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  const numarr = strarr.map(Number);
+  if(numarr.length>=1){
+    if(numarr[0] == 1 || numarr[numarr.length-1] == 1)
+      document.getElementById("result").innerHTML = true;
+    else
+      document.getElementById("result").innerHTML = false;
+  }
+}
+</script>

@@ -1,0 +1,30 @@
+<head>
+  <title>Rightmostdigit</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<span>Enter third num:</span>
+<input id="thirdnum" text></input><br><br>
+<button onclick=rightmostdigit()>Last digit of the two/three given positive integers is same</button>
+<p>Check from three given numbers (non negative integers),
+   that two or all of them have the same rightmost digit <br>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function rightmostdigit(){
+  const numberone = parseInt(document.getElementById("firstnum").value);
+  const numbertwo = parseInt(document.getElementById("secondnum").value);
+  const numberthree = parseInt(document.getElementById("thirdnum").value);
+
+  if((numberone % 10 == numbertwo % 10) || (numbertwo % 10 == numberthree % 10)
+  || (numberone % 10 == numberthree % 10))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

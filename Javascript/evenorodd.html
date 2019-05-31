@@ -1,0 +1,26 @@
+<head>
+<title>Even Or Odd</title>
+</head>
+<body>
+<p>Enter a number:
+  <input id='usernum' text></input><br><br>
+  <button onclick='evenodd()'>Odd or Even</button><br>
+  <span id='result'></span>
+</p>
+<script type="text/javascript">
+
+window.onload = function() {
+  document.getElementById("usernum").focus();
+};
+
+function evenodd(){
+  const numvalue = document.getElementById('usernum').value;
+
+  if(numvalue % 2 == 0)
+   document.getElementById('result').innerHTML = numvalue + ' is even';
+  else
+   document.getElementById('result').innerHTML = numvalue + ' is odd';
+
+}
+</script>
+</body>

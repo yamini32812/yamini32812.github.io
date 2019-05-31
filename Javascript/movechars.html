@@ -1,0 +1,22 @@
+<head>
+  <title>Movechars</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick="movelastthreechartofront()">Move last three character to the start of a given string.
+</button><br>
+<p>Move last three character to the start of a given string.
+  The string length must be greater or equal to three.</p>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function movelastthreechartofront(){
+  const str = document.getElementById("userstr").value;
+  if(str.length >= 3)
+    document.getElementById("result").innerHTML = str.substr(-3) + str.substr(0,str.length-3);
+}
+</script>

@@ -1,0 +1,27 @@
+<p>
+<span>Enter num:</span>
+<input id="usernum" text></input><br><br>
+<span>Enter term:</span>
+<input id="userterm" text></input><br><br>
+
+<button onclick=sinefunc()>Calculate sine function.</button><br>
+<p>Calculate sine function.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("usernum").focus();
+}
+  function sinefunc(){
+    let number = document.getElementById("usernum").value;
+    let term = document.getElementById("userterm").value;
+    const error = 1.0 * Math.E - 6;
+    let t = number,tsin = number,numbersquare = (number * number);
+
+    for(let i=1;i<= term;i = i + 2){
+      t = -t * numbersquare / (i * (i-1));
+      tsin = tsin + t;
+    }
+    document.getElementById("result").innerHTML = tsin;
+  }
+</script>

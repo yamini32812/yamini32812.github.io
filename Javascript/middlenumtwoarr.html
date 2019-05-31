@@ -1,0 +1,32 @@
+<head>
+  <title>Middlenumarray</title>
+</head>
+<p><span>Enter first array:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second array:</span>
+<input id="secondnum" text></input><br><br>
+
+<button onclick=middlenumarray()>Create a new array taking the middle
+  elements of the two arrays.</button><br>
+<p>Create a new array taking the middle
+  elements of the two arrays of integer and each length 3.<br>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function middlenumarray(){
+  const strarrone = document.getElementById("firstnum").value.split(',');
+  const strarrtwo = document.getElementById("secondnum").value.split(',');
+
+  let numarr = [0,0];
+  if((strarrone.length<=3) && (strarrtwo.length<=3))
+  {
+    numarr = [parseInt(strarrone[1]),parseInt(strarrtwo[1])];
+    document.getElementById("result").innerHTML = numarr;
+  }
+  else
+    document.getElementById("result").innerHTML = 'Both the array length must be three';
+}
+</script>

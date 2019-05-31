@@ -1,0 +1,28 @@
+<head>
+  <title>Swap</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+
+<button onclick=swap()>Swap two numbers.</button><br>
+<p>Swap two numbers.<br>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+  function swap(){
+    let firstnumber = document.getElementById("firstnum").value;
+    let secondnumber = document.getElementById("secondnum").value;
+    let temp;
+
+    temp = firstnumber;
+    firstnumber = secondnumber;
+    secondnumber = temp;
+
+    document.getElementById("result").innerHTML = firstnumber+','+secondnumber;
+  }
+</script>

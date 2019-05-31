@@ -1,0 +1,25 @@
+<p>
+<span>Enter marks:</span>
+<input id="marks" text></input><br><br>
+
+<button onclick=count()>Check if the students pass.</button><br>
+<p>Check if the students pass.(Marks >= 50)<br>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("marks").focus();
+}
+  function count(){
+    let marksarr = document.getElementById("marks").value.split(',');
+    let count = 0;
+
+    for(let i=0;i<= marksarr.length-1;i++){
+      if(marksarr[i]>50){
+        count = count + 1;
+      }
+    }
+
+document.getElementById("result").innerHTML = count;
+}
+</script>

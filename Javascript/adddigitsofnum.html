@@ -1,0 +1,24 @@
+<head>
+  <title>AddDigitsofNum</title>
+</head>
+<p><span>Enter num:</span>
+<input id="userstr" text></input><br><br>
+<button onclick=adddigitsofnum() type="submit" value="Submit">Add two digits of a given positive double-digit integer.</button><br><br>
+Add two digits of a given positive integer of length two.<br>
+<span id="result"/>
+</p>
+
+<script>
+
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function adddigitsofnum(){
+  const str = document.getElementById("userstr").value;
+  if(str.length==2)
+    document.getElementById("result").innerHTML = str % 10 + Math.floor(str / 10);
+  else
+    document.getElementById("result").innerHTML = 'Must be a two-digit number';    
+}
+</script>

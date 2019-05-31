@@ -1,0 +1,24 @@
+<head>
+  <title>Firstlastequnum</title>
+</head>
+<p><span>Enter array of num:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick=firstlastequ()>Check if the first and last elements are equal</button><br>
+<p>Check if the first and last elements are equal of a given array of integers length 3.<br>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function firstlastequ(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  let numarr = strarr.map(Number);
+
+  if(numarr[0] === numarr[numarr.length-1])
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

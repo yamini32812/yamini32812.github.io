@@ -1,0 +1,32 @@
+<head>
+  <title>AddDigitsofParts</title>
+</head>
+<p><span>Enter array of num:</span>
+<input id="userstr" text></input><br><br>
+<button onclick=adddigitsofnum() type="submit" value="submit">Divide an given array of positive integers into two parts.</button><br>
+<p>Divide an given array of positive integers into two parts. First element goes to first part,
+  second element goes to second part, and third element goes to first part and so on.
+   Now compute the sum of two parts and store into an array of size two..</p>
+<span id="result"/>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function adddigitsofnum(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  const numarr = strarr.map(Number);
+//Alternate numbers can be obtained by classifying them as Even and Odd.
+  let resultarr=[0,0];
+
+  for(let i=0;i<numarr.length;i++){
+    if(i%2 == 0)
+      resultarr[0] += numarr[i];
+    else
+      resultarr[1] += numarr[i];
+    }
+  document.getElementById("result").innerHTML = resultarr;
+}
+</script>

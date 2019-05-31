@@ -1,0 +1,27 @@
+<head>
+  <title>Checksumdiffof15</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<button onclick=checksumdiffof15() type="submit" value="submit">Check if either one is 8 or their sum or difference is 15.</button><br>
+<p>Check from two given integers if either one is 15 or their sum or difference is 15.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+
+function checksumdiffof15(){
+  const firstnum = parseInt(document.getElementById("firstnum").value);
+  const secondnum = parseInt(document.getElementById("secondnum").value);
+
+  if(firstnum == 15 || secondnum == 15 || ((firstnum + secondnum)== 15)
+  || Math.abs((firstnum - secondnum) == 15))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

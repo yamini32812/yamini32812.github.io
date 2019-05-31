@@ -1,0 +1,29 @@
+<head>
+  <title>Typesofangles</title>
+</head>
+<p><span>Enter num:</span>
+<input id="usernum" text></input><br><br>
+<button onclick="typesofangles()">Find the types of a given angle</button><br>
+<p> Find the types of a given angle.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function typesofangles(){
+  const num = document.getElementById("usernum").value;
+  let result = '';
+
+  if(num>=0 && num<90)
+    result = 'Acute angle';
+  if(num == 90)
+    result = 'Right angle';
+  if(num>90 && num<180)
+    result = 'Obtuse angle';
+  if(num == 180)
+    result = 'Straight angle';
+
+  document.getElementById("result").innerHTML = result;
+}
+</script>

@@ -1,17 +1,86 @@
-const carousalImage = document.querySelector(".carousalImage");
-const imageArray = ["img/pen.jpeg","img/code.jpg","img/code2.jpeg","img/writing.jpg"]
-let index = 1;
+//-----------------MODEL---------------------//
+let model = {
+        currentProject : null,
+        projects:[
+        {
+        image : "img/portfolio.jpeg",
+        webpage : "https://yamini32812.github.io/PortfolioProject/",
+        githubLink : "https://github.com/yamini32812/PortfolioProject"
+        },
+        {
+        image : "img/memorygame.png",
+        webpage : "https://yamini32812.github.io/fend-project-memory-game/",
+        githubLink : "https://github.com/yamini32812/fend-project-memory-game"
+        },
+        {
+        image : "img/arcade.png",
+        webpage : "https://yamini32812.github.io/frontend-nanodegree-arcade-game/",
+        githubLink : "https://github.com/yamini32812/frontend-nanodegree-arcade-game"
+        },
+        {
+        image : "img/jasmine.jpg",
+        webpage : "https://yamini32812.github.io/frontend-nanodegree-feedreader/",
+        githubLink : "https://github.com/yamini32812/frontend-nanodegree-feedreader"
+        },
+        {
+        image : "img/restaurant.jpg",
+        webpage : "https://yamini32812.github.io/mws-restaurant-stage-1/",
+        githubLink : "https://github.com/yamini32812/mws-restaurant-stage-1"
+      }]
+};
 
-function nextSlide(){
-  if(index < imageArray.length){
-  index++;
-   carousalImage.setAttribute('src',imageArray[index-1]);
- }
-}
+//----------------CONTROLLER-------------------//
+let controller = {
+    index: 0,
+    init: function() {
+        // set our current project to the first one in the list
+        model.currentProject = model.projects[0];
+        // tell our views to initialize
+        projectsView.init();
+    },
 
-function prevSlide(){
-  if(index < imageArray.length+1 && index > 1){
-   index--;
-   carousalImage.setAttribute('src',imageArray[index-1]);
- }
-}
+    getCurrentProject: function() {
+        model.currentProject = model.projects[controller.index];
+        return model.currentProject;
+    },
+
+    nextSlide: function(){
+      if(controller.index < (model.projects.length))
+      {
+        controller.index++;
+        projectsView.render();
+      }
+    },
+
+    prevSlide: function(){
+      controller.index--;
+      projectsView.render();
+    }
+};
+
+
+/* ======= View ======= */
+
+let projectsView = {
+
+    init: function() {
+        // store pointers to our DOM elements for easy access later
+        this.carousalImage = document.querySelector(".carousalImage");
+        this.projectWebpageLink = document.getElementById("projectWebpageLink");
+        this.projectGithubLink = document.getElementById("projectGithubLink");
+
+        // render this view (update the DOM elements with the right values)
+        this.render();
+    },
+
+    render: function() {
+        // update the DOM elements with values from the current cat
+        let currentProject = controller.getCurrentProject();
+        this.projectWebpageLink.innerHTML = currentProject.webpage;
+        this.projectGithubLink.innerHTML = currentProject.githubLink;
+        this.carousalImage.src = currentProject.image;
+    }
+};
+
+// make it go!
+controller.init();

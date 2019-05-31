@@ -1,0 +1,26 @@
+<p>
+<span>Enter num:</span>
+<input id="usernum" text></input><br><br>
+<span>Enter exponent number:</span>
+<input id="usernumtwo" text></input><br><br>
+<button onclick=exponent()>Find the exponent of the number.</button><br>
+<p>Find the exponent of the number.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("usernum").focus();
+}
+function exponent(){
+  let num = parseInt(document.getElementById("usernum").value);
+  let exponum = parseInt(document.getElementById("usernumtwo").value);
+  let product = 1, psequence = num;
+  while(exponum > 0){
+    if((exponum % 2) == 1)
+      product = product * psequence;
+    exponum = Math.floor(exponum / 2);
+    psequence = psequence * psequence;
+  }
+  document.getElementById('result').innerHTML = product;
+}
+</script>

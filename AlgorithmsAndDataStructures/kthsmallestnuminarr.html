@@ -1,0 +1,45 @@
+<p>
+<span>Enter array of num:</span>
+<input id="userarr" text></input><br><br>
+<span>Enter kth num:</span>
+<input id="usernum" text></input><br><br>
+
+<button onclick=kthsmallestnuminarray()>Find kth smallest num in an array.</button><br>
+<p>Find kth smallest num in an array.</p>
+<span id="result"/><br>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("userarr").focus();
+}
+  function kthsmallestnuminarray(){
+    let strarr = document.getElementById("userarr").value.split(',');
+    let numarr = strarr.map(Number);
+    let kthnum = parseInt(document.getElementById("usernum").value);
+    let temp = 0,i=0,j=0,l=0,u=numarr.length-1,x=0;
+
+    while(l<u){
+      i = l;
+      j = u;
+      x = numarr[kthnum-1];
+
+      while((i<=(kthnum-1)) && (j>=(kthnum-1)))
+      {
+        while(numarr[i]<x)
+          i++;
+        while(x<numarr[j])
+          j--;
+        temp = numarr[i];
+        numarr[i] = numarr[j];
+        numarr[j] = temp;
+        i++;
+        j--;
+      }
+      if(j<(kthnum-1))
+        l = i;
+      if(i>(kthnum-1))
+        u = j;
+    }
+    document.getElementById("result").innerHTML = x;
+  } 
+</script>

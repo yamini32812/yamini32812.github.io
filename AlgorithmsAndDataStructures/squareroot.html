@@ -1,0 +1,30 @@
+<p>
+<span>Enter num:</span>
+<input id="usernum" text></input><br><br>
+
+<button onclick=squareroot()>Find the squareroot of a given number.</button><br>
+<p>Find the squareroot of a given number.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("usernum").focus();
+}
+function squareroot(){
+  let num = parseInt(document.getElementById("usernum").value);
+  const e = 0.00001;
+  let intialest = 0;
+  let nextest = num/2;
+//while((intialest - nextest) > e){
+  //intialest = nextest;
+  //nextest = (intialest + (num/intialest))/2;
+  //console.log(intialest);
+
+//}
+  while(Math.abs(intialest - nextest) < e){
+    intialest = nextest;
+    nextest = (intialest + (num/intialest))/2;
+  }
+  document.getElementById('result').innerHTML = nextest;
+}
+</script>

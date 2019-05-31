@@ -1,0 +1,36 @@
+
+<head>
+  <title>Largestofthree</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<span>Enter third num:</span>
+<input id="thirdnum" text></input><br><br>
+<button onclick=largestofthree()>Largest of three numbers</button>
+<p>Find the largest of three given integers.</p>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function largestofthree(){
+  const numberone = parseInt(document.getElementById("firstnum").value);
+  const numbertwo = parseInt(document.getElementById("secondnum").value);
+  const numberthree = parseInt(document.getElementById("thirdnum").value);
+
+  let maxval = 0;
+
+  if(numberone > numbertwo)
+    maxval = numberone;
+  else
+    maxval = numbertwo;
+
+  if(numberthree > maxval)
+    maxval = numberthree;
+
+  document.getElementById("result").innerHTML = maxval;
+}
+</script>

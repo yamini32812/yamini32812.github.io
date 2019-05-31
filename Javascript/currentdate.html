@@ -1,0 +1,23 @@
+<head>
+	<title>CurrentDate</title>
+</head>
+<p>Print current date</p>
+<button onclick="formatDate()" id="currdate">Click me to find current Date</Button><br><br>
+  <span id="date"/>
+<script>
+window.onload = function(){
+  document.getElementById('currdate').focus();
+}
+function formatDate(){
+  const dat = new Date();
+  let day = dat.getDate();
+  let month = dat.getMonth();
+  let year = dat.getFullYear();
+
+  if(day < 10) {day = '0' + day;}
+  if(month < 10) {month = '0' + month;}
+
+  document.getElementById("date").innerHTML = [day,month,year].join('/');
+}
+
+</script>

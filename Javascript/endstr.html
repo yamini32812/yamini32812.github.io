@@ -1,0 +1,23 @@
+<head>
+  <title>Checkendstr</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<button onclick="endstring()">Test if a string end with "Script"</button><br>
+<p>Test if a string end with "Script". The string length must be greater or equal to 6. </p>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function endstring(){
+  const str = document.getElementById("userstr").value;
+
+  if(str.length >= 6 && str.endsWith("Script"))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

@@ -1,0 +1,21 @@
+<head>
+  <title>Strwofirstandlastchar</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick="strwofirstandlastchar()">Create a new string without the first and last character of a given string
+</button><br>
+<p>Create a new string without the first and last character of a given string</p>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function strwofirstandlastchar(){
+  const str = document.getElementById("userstr").value;
+
+  document.getElementById("result").innerHTML = str.slice(1,str.length-1);
+}
+</script>

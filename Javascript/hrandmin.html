@@ -1,0 +1,21 @@
+<head>
+<title>Convert to hours and min.</title>
+</head>
+<body>
+<p>Enter a number:
+  <input id='usernum' text></input><br><br>
+  <button onclick='hrandmin()'>Convert to hours and min</button><br>
+  <span id='result'></span>
+</p>
+<script type="text/javascript">
+window.onload = function() {
+  document.getElementById("usernum").focus();
+};
+function hrandmin(){
+  const num = parseInt(document.getElementById('usernum').value);
+  const hrs = Math.floor(num/60);
+  const min =  num % 60;
+  document.getElementById('result').innerHTML = hrs + ':' + min;
+}
+</script>
+</body>

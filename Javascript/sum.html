@@ -1,0 +1,22 @@
+<head>
+<title>Sum to nth number.</title>
+</head>
+<body>
+<p>Enter a number:
+  <input id='usernum' text></input><br>
+  <button onclick='sum()'>Sum</button><br>
+  <p>Sum of n numbers</p>
+  <span id='result'></span>
+</p>
+<script type="text/javascript">
+window.onload = function() {
+  document.getElementById("usernum").focus();
+};
+function sum(){
+  const numvalue = parseInt(document.getElementById('usernum').value);
+  let sum = 0;
+  sum = (numvalue * (numvalue+1))/2;
+  document.getElementById('result').innerHTML = 'The sum of numbers from zero to ' +numvalue+ ' is: ' +sum;
+}
+</script>
+</body>

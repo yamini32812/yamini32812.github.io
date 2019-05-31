@@ -1,0 +1,23 @@
+<p>
+<span>Enter array of marks:</span>
+<input id="marks" text></input><br><br>
+
+<button onclick=summation()>Calculate total marks.</button><br>
+<p>Calculate total marks.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("marks").focus();
+}
+  function summation(){
+    let marksstrarr = document.getElementById("marks").value.split(',');
+    let marksnumarr = marksstrarr.map(Number);
+    let summation = 0;
+
+    for(let i=0;i<= marksnumarr.length-1;i++){
+        summation = summation + marksnumarr[i];
+    }
+    document.getElementById("result").innerHTML = summation;
+  }
+</script>

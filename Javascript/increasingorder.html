@@ -1,0 +1,28 @@
+<head>
+  <title>Increasingorder</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<span>Enter third num:</span>
+<input id="thirdnum" text></input><br><br>
+<button onclick=increasingorder()>Check if three given numbers are in increasing order</button>
+<p>Check if three given numbers are in increasing order.<br>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function increasingorder(){
+  const numberone = parseInt(document.getElementById("firstnum").value);
+  const numbertwo = parseInt(document.getElementById("secondnum").value);
+  const numberthree = parseInt(document.getElementById("thirdnum").value);
+
+  if((numberone < numbertwo) && (numbertwo < numberthree))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

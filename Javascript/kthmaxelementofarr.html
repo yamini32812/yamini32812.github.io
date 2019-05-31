@@ -1,0 +1,33 @@
+<head>
+  <title>KthMaxElementofarr</title>
+</head>
+<p><span>Enter array of nums:</span>
+<input id="userstr" text></input><br><br>
+<span>Enter k:</span>
+<input id="k" text></input><br><br>
+
+<button onclick=kthmaxelementofarr()>Find the kth greatest element
+  of a given array of integers.</button><br>
+<p>Find the kth greatest element of a given array of integers.</p>
+<span id="result"/>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function kthmaxelementofarr(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  let numarr = strarr.map(Number);
+  const k = document.getElementById("k").value;
+
+  let maxval;
+
+  if(k<=numarr.length){
+    numarr = numarr.sort();
+    maxval = numarr[numarr.length-k];
+  }
+  document.getElementById("result").innerHTML = maxval;
+}
+</script>

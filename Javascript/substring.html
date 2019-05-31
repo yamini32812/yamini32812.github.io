@@ -1,0 +1,23 @@
+<head>
+  <title>Substring</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<button onclick=checkstring()>Submit</button><br>
+<p>Check if a string "Script" presents at 5th (index 4) position in a given string,
+if "Script" presents in the string return the string without "Script" otherwise return the original one.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function checkstring(){
+  const str = document.getElementById("userstr").value;
+
+  if(str.substring(4,str.length) == "Script")
+    document.getElementById("result").innerHTML = str.substring(0, 4) ;
+  else
+    document.getElementById("result").innerHTML = str;
+}
+</script>

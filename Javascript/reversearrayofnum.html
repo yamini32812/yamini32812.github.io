@@ -1,0 +1,27 @@
+
+<head>
+  <title>Reversearrofnum</title>
+</head>
+<p><span>Enter array of num:</span>
+<input id="userstr" text></input><br><br>
+<button onclick=reversearrofnum()>Reverse the elements of a given array</button><br>
+<p>Reverse the elements of a given array of integers length 3.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function reversearrofnum(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  let numarr = strarr.map(Number);
+
+  for(let i=0,j=numarr.length-1;i<j;i++,j--){
+    temp = numarr[i];
+    numarr[i] = numarr[j];
+    numarr[j] = temp;
+  }
+
+  document.getElementById('result').innerHTML = numarr;
+}
+</script>

@@ -1,0 +1,29 @@
+<head>
+  <title>Rightmostdigit</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+
+<button onclick=suminrange()>Sum In range</button>
+<p>Compute the sum of the two given integers,
+  If the sum is in the range 50..80 return 65 other wise return 80.</p>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function suminrange(){
+  const numberone = parseInt(document.getElementById("firstnum").value);
+  const numbertwo = parseInt(document.getElementById("secondnum").value);
+
+  const sum = numberone + numbertwo;
+
+  if((sum >= 50) && (sum <= 80))
+    document.getElementById("result").innerHTML = 65;
+  else
+    document.getElementById("result").innerHTML = 80;
+}
+</script>

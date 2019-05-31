@@ -1,0 +1,29 @@
+<head>
+  <title>MultiplyDivide</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<button id="multiply" onclick=multiply()>Multiply</button>
+<button id="divide" onclick=divide()>Divide</button><br>
+  The result is: <br>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+
+function multiply(){
+  const numberone = document.getElementById("firstnum").value;
+  const numbertwo = document.getElementById("secondnum").value;
+  document.getElementById("result").innerHTML = (numberone * numbertwo);
+}
+
+function divide(){
+  const numberone = document.getElementById("firstnum").value;
+  const numbertwo = document.getElementById("secondnum").value;
+  document.getElementById("result").innerHTML = (numberone / numbertwo);
+}
+</script>

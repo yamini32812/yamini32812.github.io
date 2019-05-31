@@ -1,0 +1,18 @@
+<p>
+<span>Enter num:</span>
+<input id="usernum" text></input><br><br>
+<button onclick=createrandomnums()>Create random num in a range.</button><br>
+<p>Create random num in a range.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("usernum").focus();
+}
+function createrandomnums(){
+  let num = parseInt(document.getElementById("usernum").value);
+  const modulus = 4096,multiplier = 109,increment = 853;
+      num = ((multiplier * num) + increment) % modulus;
+      document.getElementById('result').innerHTML = num;
+}
+</script>

@@ -1,0 +1,40 @@
+<head>
+	<title>CurrentDateTime</title>
+</head>
+<p>Current Day and Time in specific format</p>
+<button onclick="getDatetime()" id="currdatetime">Click me to find current Day and Time</Button><br><br>
+	<span id="currdat">Date</span>
+	<span id="currtime">Time</span>
+<script>
+window.onload = function(){
+	document.getElementById('currdatetime').focus();
+}
+function getDatetime(){
+	const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	const dat = new Date();
+
+	let hours = dat.getHours();
+	let minutes = dat.getMinutes();
+	let seconds = dat.getSeconds()
+
+	const ampm = (hours>12)?'P.M.':'A.M.';
+	let hoursampm = (hours>=12)?(hours-12):hours;
+
+	if(hours < 10)
+		hours = '0'+ hours;
+
+	if(minutes < 10)
+		minutes = '0'+ minutes;
+
+	if(seconds < 10)
+		seconds = '0'+ seconds;
+
+	document.getElementById("currdat").innerHTML = days[dat.getDay()];
+	document.getElementById("currtime").innerHTML = hoursampm
+																								+ ':'
+                                              	+ minutes
+                                              	+ ':'
+                                              	+ seconds
+                                              	+ ' ' + ampm ;
+}
+</script>

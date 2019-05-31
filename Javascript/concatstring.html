@@ -1,0 +1,32 @@
+<head>
+  <title>Concatstr</title>
+</head>
+<p><span>Enter first string:</span>
+<input id="userstrone" text></input><br><br>
+<span>Enter second string:</span>
+<input id="userstrtwo" text></input><br><br>
+<button onclick="concatstr()" type="submit" value="submit">Concatenate two strings of same length.</button><br>
+<p>Concatenate two strings and return the result.
+  If the length of the strings are not same then remove the characters from the longer string.</p>
+  <span id="result"></span>
+</p>
+
+<script>
+
+window.onload = function() {
+  document.getElementById("userstrone").focus();
+};
+
+function concatstr(){
+  const strone = document.getElementById("userstrone").value;
+  const strtwo = document.getElementById("userstrtwo").value;
+  if(strone.length == strtwo.length)
+    document.getElementById("result").innerHTML = strone + strtwo;
+  else{
+    if(strone.length > strtwo.length)
+      document.getElementById("result").innerHTML = strone.slice(0,strtwo.length)+ strtwo;
+    else
+      document.getElementById("result").innerHTML = strone + strtwo.slice(0,strone.length);
+  }
+}
+</script>

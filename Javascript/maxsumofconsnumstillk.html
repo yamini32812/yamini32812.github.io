@@ -1,0 +1,33 @@
+<head>
+  <title>Maxsumofconsnumtillk</title>
+</head>
+<p><span>Enter array of nums:</span>
+<input id="userstr" text></input><br><br>
+<span>Enter k:</span>
+<input id="k" text></input><br><br>
+<button onclick=maxsumofconsnumtillk()>Find the maximal sum between any
+  two adjacent elements till kth number.</button><br>
+<p>Find the maximal sum between any two adjacent elements of a given array of integers.<br>
+<span id="result"/>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+function maxsumofconsnumtillk(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  let numarr = strarr.map(Number);
+  const k = parseInt(document.getElementById("k").value);
+
+  let max = numarr[0],sum=0;
+  if(k<=numarr.length && k > 0){
+    for(let i=1;i<k;i++){
+      sum = numarr[i]+numarr[i-1];
+      if(sum > max)
+        max = sum;
+  }
+  document.getElementById("result").innerHTML = max;
+}else
+  document.getElementById("result").innerHTML = 'Out of range';
+}
+</script>

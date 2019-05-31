@@ -1,0 +1,24 @@
+<head>
+  <title>CheckSpaceBtwChar</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<button onclick="sepbtwcharab()" type="submit" value="submit">Check diff btw characters in a given string</button><br>
+<p>Check if the characters a and b
+  are separated by exactly 3 places anywhere (at least once) in a given string.</p>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function sepbtwcharab(){
+  const str = document.getElementById("userstr").value;
+  //... gives the space between elements in this case three.
+  if((/a...b/).test(str) || (/b...a/).test(str))
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

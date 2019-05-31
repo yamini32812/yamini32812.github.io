@@ -1,0 +1,34 @@
+<input id="userarra" text>Enter first sorted array of num(n):</input><br><br>
+<input id="userarrb" text>Enter second sorted array of num(n):</input><br><br>
+
+<button onclick=mergesort()>Merge two sorted arrays in ascending order into one.</button><br>
+<p>Merge two arrays in ascending order into one.<br>
+<span id="result"/><br>
+</p>
+<script>
+  function mergesort(){
+    let strarra = document.getElementById("userarra").value.split(',');
+    let numarra = strarra.map(Number);
+
+    let strarrb = document.getElementById("userarrb").value.split(',');
+    let numarrb = strarrb.map(Number);
+
+    let numarrc = [];
+    let indexNumarra=0,indexNumarrb=0;
+
+    while(indexNumarra<numarra.length && indexNumarrb<numarrb.length)
+    {
+      if(numarra[indexNumarra] < numarrb[indexNumarrb]){
+          numarrc.push(numarra[indexNumarra]);
+          indexNumarra++;
+      }
+
+      else{
+          numarrc.push(numarrb[indexNumarrb]);
+          indexNumarrb++;
+      }
+        document.getElementById("result").innerHTML =
+        numarrc.concat(numarra.slice(indexNumarra)).concat(numarrb.slice(indexNumarrb));
+   }
+}
+</script>

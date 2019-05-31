@@ -1,0 +1,25 @@
+<head>
+  <title>Capitalizefirstletter</title>
+</head>
+<p><span>Enter string:</span>
+<input id="userstr" text></input><br><br>
+<button onclick="Capitalizefirstletter()" type="submit" value="submit">Capitalize the first letter of each word of a given string.
+</button><br>
+<p> Capitalize the first letter of each word of a given string.</p>
+<span id="result"/>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function Capitalizefirstletter(){
+  let str = document.getElementById("userstr").value;
+
+  document.getElementById("result").innerHTML = str.toLowerCase()
+        .split(' ')
+        .map((s) => s.charAt(0).toUpperCase()+s.slice(1).toLowerCase())
+        .join(' '); ;
+}
+</script>

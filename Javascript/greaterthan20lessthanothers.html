@@ -1,0 +1,32 @@
+<head>
+  <title>Greaterthan20lessthanothers</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+<span>Enter third num:</span>
+<input id="thirdnum" text></input><br><br>
+<button onclick=checknum()>Greater than 20 and lesser than others</button>
+<p>Check from three given integers
+  that if a number is greater than or equal to 20 and less than one of the others.</p>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function checknum(){
+  const numberone = parseInt(document.getElementById("firstnum").value);
+  const numbertwo = parseInt(document.getElementById("secondnum").value);
+  const numberthree = parseInt(document.getElementById("thirdnum").value);
+
+  if( ( (numberone >= 20) && ((numberone < numbertwo) || (numberone < numberthree)))
+  || ((numbertwo >= 20) && ((numbertwo < numberone) || (numbertwo < numberthree)))
+  || ((numberthree >= 20) && ((numberthree < numbertwo) || (numberthree < numberone))))
+
+    document.getElementById("result").innerHTML = true;
+  else
+    document.getElementById("result").innerHTML = false;
+}
+</script>

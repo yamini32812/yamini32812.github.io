@@ -1,0 +1,35 @@
+<span>Enter array of num:</span>
+<input id="userarr" text></input><br><br>
+
+<button onclick=quicksort(userarr.value)>Sort the array in ascending order.</button><br>
+<p>Sort the array in ascending order.<br>
+<span id="result"/><br>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("userarr").focus();
+}
+  function quicksort(userarr)
+  {
+    let strarr = userarr.split(',');
+    let numarr = strarr.map(Number);
+    if(numarr.length <= 1)
+      document.getElementById("result").innerHTML = numarr;
+    else {
+      sorted_arr = quicksort_rec(userarr);
+      document.getElementById("result").innerHTML = sorted_arr;
+    }
+  }
+  function quicksort_rec(userarr){
+    let left = [],right = [],newarr = [],pivot = numarr.pop(),length = numarr.length;
+    for (let i = 0; i < length; i++)
+    {
+		    if (numarr[i] <= pivot)
+          left.push(numarr[i]);
+        else
+		      right.push(numarr[i]);
+		}
+    return newarr.concat(quicksort_rec(left), pivot, quicksort_rec(right));
+  }
+
+</script>

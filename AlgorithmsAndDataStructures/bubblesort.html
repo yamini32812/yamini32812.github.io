@@ -1,0 +1,37 @@
+<span>Enter array of num(n):</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick=bubblesort()>Sort the array in ascending order.</button><br>
+<p>Sort the array in ascending order.<br>
+<span id="result"/><br>
+</p>
+<script>
+
+window.onload = function(){
+  document.getElementById("userstr").focus();
+}
+
+function bubblesort(){
+  let strarr = document.getElementById("userstr").value.split(',');
+  let numarr = strarr.map(Number);
+
+  let i=0,temp=0,sorted = false;
+
+  while((i<numarr.length) && (!sorted))
+  {
+    sorted = true;
+    i++;
+    for(let j=0;j<((numarr.length)-i);j++)
+    {
+      if(numarr[j]>numarr[j+1])
+      {
+        temp = numarr[j];
+        numarr[j]=numarr[j+1];
+        numarr[j+1] = temp;
+        sorted = false;
+      }
+      document.getElementById("result").innerHTML = numarr;
+    }
+  }
+}
+</script>

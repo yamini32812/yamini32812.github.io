@@ -1,0 +1,28 @@
+<p>
+<span>Enter array of num:</span>
+<input id="userarr" text></input><br><br>
+
+<button onclick=removeduplicatesinarr()>Remove duplicates from a sorted array.</button><br>
+<p>Remove duplicates from a sorted array.</p>
+<span id="result"/>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("userarr").focus();
+}
+  function removeduplicatesinarr(){
+    let strarr = document.getElementById("userarr").value.split(',');
+    let numarr = strarr.map(Number);
+    let uniquearr = [];
+
+    for (let i=1;i<=numarr.length-1;i++)
+    {
+      let duplicatecount = 0;
+      if(numarr[i] == numarr[i+1])
+        duplicatecount++;
+      if(duplicatecount  == 0)
+        uniquearr.push(numarr[i]);
+    }
+    document.getElementById("result").innerHTML = uniquearr;
+}
+</script>

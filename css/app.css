@@ -63,7 +63,7 @@ The line-height element gives the space between two headings.
 						align-items: flex-end;
          }
 
-				 #menu button:hover {
+				 #menu .button:hover {
 				   background-color: #3e8e41;
 				 }
 
@@ -124,4 +124,14 @@ The footer note.
 	font-family: "arial", sans-serif;
 	font-size: 15px;
 	text-align: left;
+}
+
+
+.center{
+	display:flex;
+	align-content: center;
+	justify-content: center;
+
+	font-family: sans-serif;
+	line-height:20pt;
 }

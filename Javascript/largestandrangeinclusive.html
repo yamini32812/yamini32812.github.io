@@ -1,0 +1,31 @@
+<head>
+  <title>Largestinrange</title>
+</head>
+<p><span>Enter first num:</span>
+<input id="firstnum" text></input><br><br>
+<span>Enter second num:</span>
+<input id="secondnum" text></input><br><br>
+
+<button onclick=largestinrange()>Largest In range</button>
+<p>Find the larger number from the two given positive integers,
+  the two numbers are in the range 40..60 inclusive.<br>
+<span id="result"></span>
+</p>
+<script>
+window.onload = function() {
+  document.getElementById("firstnum").focus();
+};
+function largestinrange(){
+  const numberone = parseInt(document.getElementById("firstnum").value);
+  const numbertwo = parseInt(document.getElementById("secondnum").value);
+
+  if((numberone >= 40 && numberone <= 60) && (numbertwo >= 40 && numbertwo <= 60)){
+    if(numberone > numbertwo)
+      document.getElementById("result").innerHTML = numberone;
+    else
+      document.getElementById("result").innerHTML = numbertwo;
+  }
+  else
+    document.getElementById("result").innerHTML = 'Not in range.';
+}
+</script>

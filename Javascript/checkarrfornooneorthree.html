@@ -1,0 +1,30 @@
+<head>
+  <title>Checkfornooneorthree</title>
+</head>
+<p><span>Enter array of nums:</span>
+<input id="userstr" text></input><br><br>
+<button onclick=checkarrfornooneorthree() type="submit" value="submit">Test if an array of integers of length 2
+does not contain 1 or a 3.</button><br>
+<p>Test if an array of integers of length 2 does not contain 1 or a 3..</p>
+<span id="result"/>
+</p>
+<script>
+
+window.onload = function() {
+  document.getElementById("userstr").focus();
+};
+
+function checkarrfornooneorthree(){
+  const strarr = document.getElementById("userstr").value.split(',');
+  const numarr = strarr.map(Number);
+  if(numarr.length<=2){
+    if((numarr[0] == 1 || numarr[1] == 1) ||
+       (numarr[0] == 3 || numarr[1] == 3))
+       document.getElementById("result").innerHTML = false;
+    else
+       document.getElementById("result").innerHTML = true;
+  }
+  else
+    document.getElementById("result").innerHTML = 'Array length must be 2';
+}
+</script>

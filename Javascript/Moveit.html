@@ -1,0 +1,17 @@
+<head>
+  <title>Movingword</title>
+</head>
+<p id="moveit">See the moving word w3resource</p>
+<script>
+  const myVar = setInterval(move, 1000);
+  const word = 'w3resource';
+  const wordArray = word.split('');
+
+  function move(){
+    let letter = wordArray.pop();
+    let newWord = wordArray.unshift(letter);
+    let reqWord = wordArray.join('');
+
+    document.getElementById("moveit").innerHTML = reqWord;
+  }
+</script>

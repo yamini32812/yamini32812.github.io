@@ -76,8 +76,8 @@ let projectsView = {
     render: function() {
         // update the DOM elements with values from the current cat
         let currentProject = controller.getCurrentProject();
-        this.projectWebpageLink.innerHTML = currentProject.webpage;
-        this.projectGithubLink.innerHTML = currentProject.githubLink;
+        this.projectWebpageLink.setAttribute('href',currentProject.webpage);
+        this.projectGithubLink.setAttribute('href',currentProject.githubLink);
         this.carousalImage.src = currentProject.image;
     }
 };

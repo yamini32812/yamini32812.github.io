@@ -87,24 +87,36 @@ The SubHeading in a specific format.
 	text-align: center;
 }
 
-.carousalContainer{
+#main {
 	display:flex;
 	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+	justify-content: space-between;
 }
+
+#container {
+	display:flex;
+	flex-direction: row;
+  justify-content: flex-start;
+}
+
 
 /*
 Fixed width for the SubImages.
 */
 
-.carousalImage {
+.image {
 	width: 250px;
 	height: 150px;
 }
+
 #prev,#next{
+	display:flex;
+	justify-content: center;
+	align-self: center;
+
 	cursor: pointer;
-	margin: 10px;
+	width: 40px;
+	height: 20px;
 }
 
 /*
@@ -126,12 +138,25 @@ The footer note.
 	text-align: left;
 }
 
+/*
+Center alignment.
+*/
 
 .center{
 	display:flex;
 	align-content: center;
 	justify-content: center;
-
-	font-family: sans-serif;
+	font-family: verdana;
 	line-height:20pt;
+}
+
+/*
+Border box alignment.
+*/
+.bordershadow{
+	border: 1px solid;
+	margin: 30px;
+  padding: 5px;
+  box-shadow: 5px 5px 5px 5px green;
+	line-height: 50pt;
 }

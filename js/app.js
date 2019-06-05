@@ -65,7 +65,7 @@ let projectsView = {
 
     init: function() {
         // store pointers to our DOM elements for easy access later
-        this.carousalImage = document.querySelector(".carousalImage");
+        this.carousalImage = document.querySelector(".image");
         this.projectWebpageLink = document.getElementById("projectWebpageLink");
         this.projectGithubLink = document.getElementById("projectGithubLink");
 

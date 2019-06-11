@@ -21,6 +21,18 @@ direction.
 .header {
 	display: flex;
 	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+
+/*
+The logo has to be visible for small screens.
+*/
+
+.logo {
+	margin-left: 0px !important;
 }
 
 
@@ -30,18 +42,10 @@ The line-height element gives the space between two headings.
 */
 
 .heading {
-	font-size: 13px;
-	line-height: 15px;
-}
-
-
-/*
-The logo has to be visible for small screens.
-*/
-
-.logo img {
-	width: 50px;
-	height: 50px;
+	font-size: 10px;
+	line-height: 10px;
+	justify-content: flex-start;
+	align-items: flex-start;
 }
 
 
@@ -49,40 +53,23 @@ The logo has to be visible for small screens.
 The horizontal line which will fit the whole width of the screen.
 */
 
-#underline {
-	align-items: stretch;
+#underlineone {
+	align-self: stretch;
+	display: block !important;
 }
 
 
 /*
-The div that will contain the streched image that is on the middle of the screen.
+The menu has to be visible for small screens.
 */
 
-#writing {
-	max-width: 100%;
-	height: auto;
-}
-
-
-/*
-The streched image that is on the middle of the screen.
-*/
-
-#imgwriting {
-	max-width: 100%;
-	height: auto;
-}
-
-
-/*
-The SubHeading in a specific format.
-*/
-
-#subheading {
-	font-family: "arial", sans-serif;
-	font-size: 25px;
-	letter-spacing: 3px;
-	color: #7d97ad;
+#menu {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: relative !important;
+	margin-top: 0px !important;
+	margin-left: 15px;
 }
 
 
@@ -90,7 +77,7 @@ The SubHeading in a specific format.
 The SubImages section in another inner flexbox in a vertical direction.
 */
 
-.subimages {
+#main {
 	display: flex;
 	flex-direction: column;
 	align-content: flex-start;
@@ -99,42 +86,10 @@ The SubImages section in another inner flexbox in a vertical direction.
 
 
 /*
-Fixed width for the SubImages.
+Icon size
 */
 
-.subimages img {
-	width: 250px;
-	height: 150px;
-}
-
-
-/*
-Hyperlinks with min. size required for smart-phone handling.
-*/
-
-nav a {
-	min-width: 48px;
-	min-height: 48px;
-}
-
-
-/*
-The caption of the images in a specific format.
-*/
-
-figcaption {
-	font-family: "arial", sans-serif;
-	font-size: 25px;
-	text-align: left;
-}
-
-
-/*
-The footer note.
-*/
-
-.notes {
-	font-family: "arial", sans-serif;
-	font-size: 15px;
-	text-align: left;
+.sharebutton {
+	width: 10%;
+	height: 10%;
 }

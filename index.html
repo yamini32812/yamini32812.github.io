@@ -11,10 +11,10 @@
 		<!--The link element linking the html page to a default css file.-->
 		<link rel="stylesheet" type="text/css" href="css/app.css">
 		<!--The link element linking the html page to a responsive css file based on browser size.-->
-		<link rel="stylesheet" type="text/css" media="screen and (min-width: 401px) and (max-width: 800px)"
+		<link rel="stylesheet" type="text/css" media="only screen and (min-width: 401px) and (max-width: 800px)"
 			href="css/responsivetablet.css">
 		<!--The link element linking the html page to a responsive css file based on browser size.-->
-		<link rel="stylesheet" type="text/css" media="screen and (max-width:400px)"
+		<link rel="stylesheet" type="text/css" media="only screen and (max-width:400px)"
 			href="css/responsivephone.css">
 	</head>
 	<!--The body of the html page.-->
@@ -35,63 +35,60 @@
 					</h1>
 					<h2 id="jobtitle">Front-End Web Developer</h2>
 				</div>
-
-				<div id="menu">
-					 <a href="index.html" class = "button">Home</a>
-					 <a href="about.html" class = "button">About</a>
-					 <a href="https://yaminichandramouli.blogspot.com/" class = "button">SQL Blog</a>
-					 <a href="img/Resume.pdf" class = "button">Resume</a>
-					 <a href="contact.html" class = "button">Contact</a>
+				<!--The horizontal line separating the heading from the menu.-->
+				<div id="underlineone">
+					<hr>
 				</div>
-
-	</header>
-	<!--The horizontal line separating the header section from the streched image.-->
-	<div id="underline">
-		<hr>
-	</div>
-
-	<div>
-		<h2 id ="subheading">Featured Work</h2>
-	</div>
-
-		<!--The section of the work done with links.-->
-		<div id="main">
-
-			<!--The images of the featured work section.-->
-			<div id = "container">
-				<button id="prev" onclick="controller.prevSlide()">PREV</button>
-				<figure class = "container">
-					<img class="image" src="" alt="Project 1">
-					<figcaption>
+				<div id="menu">
+					<a href="index.html" class = "button">Home</a>
+					<a href="about.html" class = "button">About</a>
+					<a href="https://yaminichandramouli.blogspot.com/" class = "button">SQL Blog</a>
+					<a href="img/Resume.pdf" class = "button">Resume</a>
+					<a href="contact.html" class = "button">Contact</a>
+				</div>
+			</header>
+			<!--The horizontal line separating the header section from the streched image.-->
+			<div id="underlinetwo">
+				<hr>
+			</div>
+			<div>
+				<h2 id ="subheading">Featured Work</h2>
+			</div>
+			<!--The section of the work done with links.-->
+			<div id="main">
+				<!--The images of the featured work section.-->
+				<div id = "container">
+					<a id="prev" onclick="controller.prevSlide()">&#10094;</a>
+					<figure class = "container">
+						<img class="image" src="" alt="Udacity Projects">
+						<figcaption>
 							<a id="projectWebpageLink">Link to the project webpage</a><br>
 							<a id="projectGithubLink">Link to the source code in GitHub</a><br>
 							<a href="https://github.com/yamini32812">Find more projects in my GitHub</a>
+						</figcaption>
+					</figure>
+					<a id="next" onclick="controller.nextSlide()">&#10095;</a><br>
+				</div>
+				<figure class = "container">
+					<img class="image" src="img/javascript.png" alt="JS Exercises">
+					<figcaption>
+						<a href="javascriptindex.html">Link to the Javascript exercises webpage</a><br>
 					</figcaption>
 				</figure>
-				<button id="next" onclick="controller.nextSlide()">NEXT</button><br>
-			</div>
-
-			<figure class = "container">
-				<img class="image" src="img/javascript.png" alt="JS Exercises">
-				<figcaption>
-						<a href="javascriptindex.html">Link to the Javascript exercises webpage</a><br>
-				</figcaption>
-			</figure>
-
-
-			<figure class = "container">
-				<img class="image" src="img/algorithm.jpeg" alt="Algorithm and Datastructure Exercises">
-				<figcaption>
+				<figure class = "container">
+					<img class="image" src="img/algorithm.jpeg" alt="Algorithm and Datastructure Exercises">
+					<figcaption>
 						<a href="algoDSindex.html">Link to the Algorithm and Datastructure exercises webpage</a><br>
-				</figcaption>
-			</figure>
-
-</div>
-
-			<footer class="notes">
-				<p>@Images sourced from internet.</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div>
+				<img id="bigimage" src="img/certificate.jpg" alt="certificate">
+			</div>
+			<footer class="notes logo">
+				<p id="footernotes">@Images sourced from internet.</p>
 			</footer>
-</div>
+		</div>
 		<script src="js/app.js"></script>
 	</body>
 </html>

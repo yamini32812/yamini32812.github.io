@@ -1,5 +1,5 @@
 /*
-The responsive css file for screens less than 800px wide.
+The responsive css file for screens less than or equal to 400px wide.
 */
 
 
@@ -14,14 +14,29 @@ The entire body is encompassed in an outer flex box container in a vertical dire
 
 
 /*
-The header section is encompassed in an inner flex box container in a horizontal
+The header section is encompassed in an inner flex box container in a vertical
 direction.
 */
 
 .header {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+
+/*
+The logo has to be visible for small screens.
+*/
+
+.logo {
+	margin-left: 0px !important;
+}
+
+.logo img {
+	width: 80px;
+	height: 80px;
 }
 
 
@@ -31,18 +46,10 @@ The line-height element gives the space between two headings.
 */
 
 .heading {
-	font-size: 20px;
-	line-height: 15px;
-}
-
-
-/*
-The logo has to be visible for small screens.
-*/
-
-.logo img {
-	width: 150px;
-	height: 150px;
+	font-size: 18px;
+	line-height: 10px;
+	justify-content: flex-start;
+	align-items: flex-start;
 }
 
 
@@ -50,40 +57,31 @@ The logo has to be visible for small screens.
 The horizontal line which will fit the whole width of the screen.
 */
 
-#underline {
-	align-items: stretch;
+#underlineone {
+	align-self: stretch;
+	display: block !important;
 }
 
 
 /*
-The div that will contain the streched image that is on the middle of the screen.
+The menu has to be visible for small screens.
 */
 
-#writing {
-	max-width: 100%;
-	height: auto;
+#menu {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: relative !important;
+	margin-top: 0px !important;
+	margin-left: 15px;
 }
 
-
-/*
-The streched image that is on the middle of the screen.
-*/
-
-#imgwriting {
-	max-width: 100%;
-	height: auto;
+#menu .button {
+	font-size: 22px !important;
 }
-
-
-/*
-The SubHeading in a specific format.
-*/
 
 #subheading {
-	font-family: "arial", sans-serif;
-	font-size: 40px;
-	letter-spacing: 3px;
-	color: #7d97ad;
+	font-size: 28px;
 }
 
 
@@ -91,29 +89,19 @@ The SubHeading in a specific format.
 The SubImages section in another inner flexbox in a vertical direction.
 */
 
-.subimages {
+#main {
 	display: flex;
 	flex-direction: column;
+	align-self: center;
+	justify-content: center;
 }
 
-
-/*
-Fixed width for the SubImages.
-*/
-
-.subimages img {
-	width: 250px;
-	height: 150px;
+#next {
+	left: -120px;
 }
 
-
-/*
-Hyperlinks with min. size required for smart-phone handling.
-*/
-
-nav a {
-	min-width: 48px;
-	min-height: 48px;
+#prev {
+	left: 30px;
 }
 
 
@@ -122,18 +110,21 @@ The caption of the images in a specific format.
 */
 
 figcaption {
-	font-weight: bold;
-	font-size: 30px;
-	text-align: left;
+	font-family: "verdana", sans-serif;
+	font-size: 20px;
 }
 
-
-/*
-The footer note.
-*/
-
 .notes {
-	font-family: "arial", sans-serif;
-	font-size: 15px;
-	text-align: left;
+	font-family: "verdana", sans-serif;
+	font-size: 20px;
+}
+
+.textcenter,
+.center {
+	font-size: 25px;
+}
+
+.sharebutton {
+	width: 8%;
+	height: 8%;
 }

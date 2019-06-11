@@ -1,4 +1,4 @@
-<!--Welcome to My Portfolio webpage!!-->
+<!--Welcome to contact webpage!!-->
 <!--The head section of the html page.-->
 <!doctype html>
 <html lang="en">
@@ -17,11 +17,39 @@
 		<link rel="stylesheet" type="text/css" media="screen and (max-width:400px)"
 			href="css/responsivephone.css">
 	</head>
-<body>
-  <h2 class="center">Contact Details</h2>
-  <p class="center">
-     Email-address: ychirala@gmail.com<br>
-     Phone Number: (425)301-3788
-  </p>
-	<a href="index.html" class = "button center">Home</a>
-</body>
+	<body>
+		<header class="header">
+			<!--The logo section in the header section.-->
+			<div class="logo">
+				<img src="img/logo.png" alt="logo">
+			</div>
+			<!--The heading section in the header section.-->
+			<div class="heading">
+				<h1>
+					<span id="firstname">Yamini</span>
+					<span id="lastname">Chandramouli</span>
+				</h1>
+				<h2 id="jobtitle">Front-End Web Developer</h2>
+			</div>
+			<div id="menu">
+				<a href="index.html" class = "button">Home</a>
+				<a href="about.html" class = "button">About</a>
+				<a href="https://yaminichandramouli.blogspot.com/" class = "button">SQL Blog</a>
+				<a href="img/Resume.pdf" class = "button">Resume</a>
+				<a href="contact.html" class = "button">Contact</a>
+			</div>
+		</header>
+		<!--The horizontal line separating the header section from the streched image.-->
+		<div id="underline">
+			<hr>
+		</div>
+		<h2 class="center">Contact Details</h2>
+		<p class="textcenter bordershadow">
+			Mail me at &nbsp <span id="red">ychirala[-at]gmail[dot-]com</span>
+			(non standard format of email to prevent spam).<br>
+			Add me on &nbsp
+			<a href="https://www.linkedin.com/in/yaminichandramouli/">
+			<img class="sharebutton" src="img/linkedin.png" alt="linkedin">
+			</a>
+		</p>
+	</body>

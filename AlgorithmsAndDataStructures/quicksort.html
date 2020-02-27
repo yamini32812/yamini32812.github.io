@@ -16,7 +16,7 @@ window.onload = function(){
     if(numarr.length <= 1)
       document.getElementById("result").innerHTML = numarr;
     else {
-      sorted_arr = quicksort_rec(userarr);
+      let sorted_arr = quicksort_rec(userarr);
       document.getElementById("result").innerHTML = sorted_arr;
     }
   }

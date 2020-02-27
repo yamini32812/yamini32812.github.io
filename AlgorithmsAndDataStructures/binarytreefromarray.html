@@ -1,0 +1,34 @@
+<span>Enter array of num(n):</span>
+<input id="userstr" text></input><br><br>
+
+<button onclick=binarytreefromarray()>Create a complete binary tree from array.</button><br>
+<p>Create a complete binary tree from array.<br>
+<span id="result"/><br>
+</p>
+<script>
+window.onload = function(){
+  document.getElementById("userstr").focus();
+}
+  function binarytreefromarray(){
+    let strarr = document.getElementById("userstr").value.split(',');
+    let numarr = strarr.map(Number);
+
+    let lower=0,upper=numarr.length-1,found = '';
+    let middle = 0;
+
+    while(lower<=upper)
+    {
+      middle = Math.floor((lower + upper)/2);
+      if(num>numarr[middle])
+        lower = middle + 1;
+      else
+        upper = middle-1;
+    }
+
+    if(numarr[lower]==num)
+      found = 'found '+num +' at index '+lower;
+    else
+      found = 'not found';
+    document.getElementById("result").innerHTML = found;
+  }
+</script>
